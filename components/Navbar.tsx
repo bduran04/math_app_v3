@@ -1,20 +1,34 @@
-import React from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
-import logo from "../assets/gaia-favicon.png"
+import { AppBar, Toolbar, Box, Typography } from "@mui/material";
+import Link from "next/link";
+import Image from "next/image";
+import logo from "../assets/math_solver.png";
+import styles from "../styles"
 
-export default function App() {
-    return (
-        <Navbar>
-            <NavbarContent justify="end">
-                <NavbarItem className="hidden lg:flex">
-                    <Link href="/login">Login</Link>
-                </NavbarItem>
-                <NavbarItem>
-                    <Button as={Link} color="primary" href="#" variant="flat">
-                        Sign Up
-                    </Button>
-                </NavbarItem>
-            </NavbarContent>
-        </Navbar>
-    );
-}
+const home = {
+  title: "Home",
+  path: "/",
+  image: logo,
+  describedBy: "home-link",
+};
+
+const Navbar = () => {
+  return (
+    <Box className="nav">
+      <AppBar position="static">
+        <Toolbar disableGutters className="my-4">
+          <Link legacyBehavior href={home.path}>
+            <a
+              id={home.title + "-link"}
+              className="nav-link mx-4"
+              aria-describedby={home.describedBy}
+            >
+              <Image src={home.image} alt={home.title} height={75} className={styles.logo}/>
+            </a>
+          </Link>
+        </Toolbar>
+      </AppBar>
+    </Box>
+  );
+};
+
+export default Navbar;
