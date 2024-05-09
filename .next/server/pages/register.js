@@ -23,6 +23,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "__barrel_optimize__?names=Button,Grid,Snackbar,TextField!=!./node_modules/@mui/material/index.js":
+/*!********************************************************************************************************!*\
+  !*** __barrel_optimize__?names=Button,Grid,Snackbar,TextField!=!./node_modules/@mui/material/index.js ***!
+  \********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   Button: () => (/* reexport default from dynamic */ _Button__WEBPACK_IMPORTED_MODULE_0___default.a),\n/* harmony export */   Grid: () => (/* reexport default from dynamic */ _Grid__WEBPACK_IMPORTED_MODULE_1___default.a),\n/* harmony export */   Snackbar: () => (/* reexport default from dynamic */ _Snackbar__WEBPACK_IMPORTED_MODULE_2___default.a),\n/* harmony export */   TextField: () => (/* reexport default from dynamic */ _TextField__WEBPACK_IMPORTED_MODULE_3___default.a)\n/* harmony export */ });\n/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Button */ \"./node_modules/@mui/material/node/Button/index.js\");\n/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Button__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Grid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Grid */ \"./node_modules/@mui/material/node/Grid/index.js\");\n/* harmony import */ var _Grid__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Grid__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _Snackbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Snackbar */ \"./node_modules/@mui/material/node/Snackbar/index.js\");\n/* harmony import */ var _Snackbar__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Snackbar__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _TextField__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TextField */ \"./node_modules/@mui/material/node/TextField/index.js\");\n/* harmony import */ var _TextField__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_TextField__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiX19iYXJyZWxfb3B0aW1pemVfXz9uYW1lcz1CdXR0b24sR3JpZCxTbmFja2JhcixUZXh0RmllbGQhPSEuL25vZGVfbW9kdWxlcy9AbXVpL21hdGVyaWFsL2luZGV4LmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7QUFDNEM7QUFDSjtBQUNRIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbWF0aF9hcHBfdjMvLi9ub2RlX21vZHVsZXMvQG11aS9tYXRlcmlhbC9pbmRleC5qcz8xMjA2Il0sInNvdXJjZXNDb250ZW50IjpbIlxuZXhwb3J0IHsgZGVmYXVsdCBhcyBCdXR0b24gfSBmcm9tIFwiLi9CdXR0b25cIlxuZXhwb3J0IHsgZGVmYXVsdCBhcyBHcmlkIH0gZnJvbSBcIi4vR3JpZFwiXG5leHBvcnQgeyBkZWZhdWx0IGFzIFNuYWNrYmFyIH0gZnJvbSBcIi4vU25hY2tiYXJcIlxuZXhwb3J0IHsgZGVmYXVsdCBhcyBUZXh0RmllbGQgfSBmcm9tIFwiLi9UZXh0RmllbGRcIiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///__barrel_optimize__?names=Button,Grid,Snackbar,TextField!=!./node_modules/@mui/material/index.js\n");
+
+/***/ }),
+
 /***/ "__barrel_optimize__?names=Grid,Typography!=!./node_modules/@mui/material/index.js":
 /*!*****************************************************************************************!*\
   !*** __barrel_optimize__?names=Grid,Typography!=!./node_modules/@mui/material/index.js ***!
@@ -89,7 +99,87 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _layout_mainLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../layout/mainLayout */ \"./layout/mainLayout.tsx\");\n\n\n\nconst Register = ()=>{\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_layout_mainLayout__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n        children: \"Hello Register Page\"\n    }, void 0, false, {\n        fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n        lineNumber: 6,\n        columnNumber: 5\n    }, undefined);\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Register);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9yZWdpc3Rlci50c3giLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztBQUEwQjtBQUNvQjtBQUU5QyxNQUFNRSxXQUFXO0lBQ2YscUJBQ0UsOERBQUNELDBEQUFVQTtrQkFDeUI7Ozs7OztBQUl4QztBQUVBLGlFQUFlQyxRQUFRQSxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbWF0aF9hcHBfdjMvLi9wYWdlcy9yZWdpc3Rlci50c3g/YTZjNSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IE1haW5MYXlvdXQgZnJvbSAnLi4vbGF5b3V0L21haW5MYXlvdXQnO1xuXG5jb25zdCBSZWdpc3RlciA9ICgpID0+IHtcbiAgcmV0dXJuIChcbiAgICA8TWFpbkxheW91dD5cbiAgICAgIHsvKiBZb3VyIHJlZ2lzdGVyIHBhZ2UgY29udGVudCAqL31cbiAgICAgIEhlbGxvIFJlZ2lzdGVyIFBhZ2UgXG4gICAgPC9NYWluTGF5b3V0PlxuICApO1xufTtcblxuZXhwb3J0IGRlZmF1bHQgUmVnaXN0ZXI7Il0sIm5hbWVzIjpbIlJlYWN0IiwiTWFpbkxheW91dCIsIlJlZ2lzdGVyIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./pages/register.tsx\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _layout_mainLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../layout/mainLayout */ \"./layout/mainLayout.tsx\");\n/* harmony import */ var _barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! __barrel_optimize__?names=Button,Grid,Snackbar,TextField!=!@mui/material */ \"__barrel_optimize__?names=Button,Grid,Snackbar,TextField!=!./node_modules/@mui/material/index.js\");\n/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ \"./node_modules/next/link.js\");\n/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ \"./node_modules/next/router.js\");\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _utils_supabaseClient__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/supabaseClient */ \"./utils/supabaseClient.js\");\n\n\n\n\n\n\n\n\nconst Register = ()=>{\n    const [firstName, setFirstName] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(\"\");\n    const [lastName, setLastName] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(\"\");\n    const [email, setEmail] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(\"\");\n    const [password, setPassword] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(\"\");\n    const [confirmPassword, setConfirmPassword] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(\"\");\n    const [snackbarOpen, setSnackbarOpen] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);\n    const [snackbarMessage, setSnackbarMessage] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(\"\");\n    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();\n    const handleCloseSnackbar = ()=>{\n        setSnackbarOpen(false);\n    };\n    const register = async ()=>{\n        if (password !== confirmPassword) {\n            setSnackbarMessage(\"Passwords do not match\");\n            setSnackbarOpen(true);\n            return;\n        }\n        const { data, error } = await _utils_supabaseClient__WEBPACK_IMPORTED_MODULE_5__.supabase.from(\"Users\").insert([\n            {\n                firstName,\n                lastName,\n                email,\n                password\n            }\n        ]);\n        if (!error) {\n            setSnackbarMessage(\"Registration Successful!\");\n            setSnackbarOpen(true);\n            await router.push(\"/login\");\n        }\n    };\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_layout_mainLayout__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__.Grid, {\n            container: true,\n            justifyContent: \"center\",\n            alignItems: \"center\",\n            sx: {\n                minHeight: \"calc(100vh - 64px - 100px)\",\n                margin: \"auto\",\n                maxWidth: \"400px\"\n            },\n            className: \"login\",\n            children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"form\", {\n                className: \"register-form w-[100%]\",\n                children: [\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__.Grid, {\n                        item: true,\n                        xs: 12,\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__.TextField, {\n                            value: firstName,\n                            onChange: (e)=>setFirstName(e.target.value),\n                            label: \"First Name\",\n                            fullWidth: true,\n                            required: true,\n                            margin: \"normal\"\n                        }, void 0, false, {\n                            fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                            lineNumber: 56,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                        lineNumber: 55,\n                        columnNumber: 11\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__.Grid, {\n                        item: true,\n                        xs: 12,\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__.TextField, {\n                            value: lastName,\n                            onChange: (e)=>setLastName(e.target.value),\n                            label: \"Last Name\",\n                            fullWidth: true,\n                            required: true,\n                            margin: \"normal\"\n                        }, void 0, false, {\n                            fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                            lineNumber: 66,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                        lineNumber: 65,\n                        columnNumber: 11\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__.Grid, {\n                        item: true,\n                        xs: 12,\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__.TextField, {\n                            value: email,\n                            onChange: (e)=>setEmail(e.target.value),\n                            type: \"email\",\n                            label: \"Email Address\",\n                            fullWidth: true,\n                            required: true,\n                            margin: \"normal\"\n                        }, void 0, false, {\n                            fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                            lineNumber: 75,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                        lineNumber: 74,\n                        columnNumber: 11\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__.Grid, {\n                        item: true,\n                        xs: 12,\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__.TextField, {\n                            value: password,\n                            onChange: (e)=>setPassword(e.target.value),\n                            type: \"password\",\n                            label: \"Password\",\n                            fullWidth: true,\n                            required: true,\n                            margin: \"normal\"\n                        }, void 0, false, {\n                            fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                            lineNumber: 85,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                        lineNumber: 84,\n                        columnNumber: 11\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__.Grid, {\n                        item: true,\n                        xs: 12,\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__.TextField, {\n                            value: confirmPassword,\n                            onChange: (e)=>setConfirmPassword(e.target.value),\n                            type: \"password\",\n                            label: \"Confirm Password\",\n                            fullWidth: true,\n                            required: true,\n                            margin: \"normal\"\n                        }, void 0, false, {\n                            fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                            lineNumber: 95,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                        lineNumber: 94,\n                        columnNumber: 11\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__.Button, {\n                        variant: \"contained\",\n                        onClick: async ()=>await register(),\n                        fullWidth: true,\n                        sx: {\n                            mt: 2,\n                            mb: 2\n                        },\n                        children: \"Register\"\n                    }, void 0, false, {\n                        fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                        lineNumber: 104,\n                        columnNumber: 11\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__.Grid, {\n                        container: true,\n                        direction: \"column\",\n                        alignItems: \"center\",\n                        sx: {\n                            mb: 2\n                        },\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__.Grid, {\n                            item: true,\n                            children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {\n                                legacyBehavior: true,\n                                href: \"/login\",\n                                passHref: true,\n                                children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"a\", {\n                                    style: {\n                                        color: \"#0a4771\"\n                                    },\n                                    children: \"Already have an account? Sign In\"\n                                }, void 0, false, {\n                                    fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                                    lineNumber: 114,\n                                    columnNumber: 17\n                                }, undefined)\n                            }, void 0, false, {\n                                fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                                lineNumber: 113,\n                                columnNumber: 15\n                            }, undefined)\n                        }, void 0, false, {\n                            fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                            lineNumber: 112,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                        lineNumber: 111,\n                        columnNumber: 11\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__.Snackbar, {\n                        open: snackbarOpen,\n                        autoHideDuration: 6000,\n                        onClose: handleCloseSnackbar,\n                        message: snackbarMessage,\n                        action: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_barrel_optimize_names_Button_Grid_Snackbar_TextField_mui_material__WEBPACK_IMPORTED_MODULE_6__.Button, {\n                            color: \"secondary\",\n                            size: \"small\",\n                            onClick: handleCloseSnackbar,\n                            children: \"Close\"\n                        }, void 0, false, {\n                            fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                            lineNumber: 124,\n                            columnNumber: 15\n                        }, void 0)\n                    }, void 0, false, {\n                        fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                        lineNumber: 118,\n                        columnNumber: 11\n                    }, undefined)\n                ]\n            }, void 0, true, {\n                fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n                lineNumber: 53,\n                columnNumber: 9\n            }, undefined)\n        }, void 0, false, {\n            fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n            lineNumber: 46,\n            columnNumber: 7\n        }, undefined)\n    }, void 0, false, {\n        fileName: \"/Users/bduran04/Desktop/Projects/math_app_v3/pages/register.tsx\",\n        lineNumber: 45,\n        columnNumber: 5\n    }, undefined);\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Register);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,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Ozs7Ozs7Ozs7O2tDQUVYLDhEQUFDcEMsb0dBQUlBO3dCQUFDd0MsSUFBSTt3QkFBQ0MsSUFBSTtrQ0FDYiw0RUFBQ3hDLHlHQUFTQTs0QkFDUnlDLE9BQU96Qjs0QkFDUDBCLFVBQVUsQ0FBQ0MsSUFBTTFCLG1CQUFtQjBCLEVBQUVDLE1BQU0sQ0FBQ0gsS0FBSzs0QkFDbERPLE1BQUs7NEJBQ0xILE9BQU07NEJBQ05DLFNBQVM7NEJBQ1RDLFFBQVE7NEJBQ1JaLFFBQU87Ozs7Ozs7Ozs7O2tDQUVYLDhEQUFDbEMsc0dBQU1BO3dCQUNMZ0QsU0FBUTt3QkFDUkMsU0FBUyxVQUFZLE1BQU0xQjt3QkFDM0JzQixTQUFTO3dCQUNUYixJQUFJOzRCQUFFa0IsSUFBSTs0QkFBR0MsSUFBSTt3QkFBRTtrQ0FBRzs7Ozs7O2tDQUd4Qiw4REFBQ3JELG9HQUFJQTt3QkFBQytCLFNBQVM7d0JBQUN1QixXQUFVO3dCQUFTckIsWUFBVzt3QkFBU0MsSUFBSTs0QkFBRW1CLElBQUk7d0JBQUU7a0NBQ2pFLDRFQUFDckQsb0dBQUlBOzRCQUFDd0MsSUFBSTtzQ0FDUiw0RUFBQ3BDLGtEQUFJQTtnQ0FBQ21ELGNBQWM7Z0NBQUNDLE1BQUs7Z0NBQVNDLFFBQVE7MENBQ3pDLDRFQUFDQztvQ0FBRUMsT0FBTzt3Q0FBRUMsT0FBTztvQ0FBVTs4Q0FBRzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O2tDQUl0Qyw4REFBQ3pELHdHQUFRQTt3QkFDUDBELE1BQU0xQzt3QkFDTjJDLGtCQUFrQjt3QkFDbEJDLFNBQVN2Qzt3QkFDVHdDLFNBQVMzQzt3QkFDVDRDLHNCQUNFLDhEQUFDL0Qsc0dBQU1BOzRCQUFDMEQsT0FBTTs0QkFBWU0sTUFBSzs0QkFBUWYsU0FBUzNCO3NDQUFxQjs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBU25GO0FBRUEsaUVBQWVoQixRQUFRQSxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbWF0aF9hcHBfdjMvLi9wYWdlcy9yZWdpc3Rlci50c3g/YTZjNSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IE1haW5MYXlvdXQgZnJvbSAnLi4vbGF5b3V0L21haW5MYXlvdXQnO1xuaW1wb3J0IHsgR3JpZCwgVGV4dEZpZWxkLCBCdXR0b24sIFNuYWNrYmFyIH0gZnJvbSBcIkBtdWkvbWF0ZXJpYWxcIjtcbmltcG9ydCBMaW5rIGZyb20gXCJuZXh0L2xpbmtcIjtcbmltcG9ydCB7IHVzZVJvdXRlciB9IGZyb20gJ25leHQvcm91dGVyJztcbmltcG9ydCB7IHVzZVN0YXRlIH0gZnJvbSBcInJlYWN0XCI7XG5pbXBvcnQgeyBzdXBhYmFzZSB9IGZyb20gXCIuLi91dGlscy9zdXBhYmFzZUNsaWVudFwiO1xuXG5cbmNvbnN0IFJlZ2lzdGVyOiBSZWFjdC5GQyA9ICgpID0+IHtcbiAgY29uc3QgW2ZpcnN0TmFtZSwgc2V0Rmlyc3ROYW1lXSA9IHVzZVN0YXRlPHN0cmluZz4oJycpO1xuICBjb25zdCBbbGFzdE5hbWUsIHNldExhc3ROYW1lXSA9IHVzZVN0YXRlPHN0cmluZz4oJycpO1xuICBjb25zdCBbZW1haWwsIHNldEVtYWlsXSA9IHVzZVN0YXRlPHN0cmluZz4oJycpO1xuICBjb25zdCBbcGFzc3dvcmQsIHNldFBhc3N3b3JkXSA9IHVzZVN0YXRlPHN0cmluZz4oJycpO1xuICBjb25zdCBbY29uZmlybVBhc3N3b3JkLCBzZXRDb25maXJtUGFzc3dvcmRdID0gdXNlU3RhdGU8c3RyaW5nPignJyk7XG4gIGNvbnN0IFtzbmFja2Jhck9wZW4sIHNldFNuYWNrYmFyT3Blbl0gPSB1c2VTdGF0ZTxib29sZWFuPihmYWxzZSk7XG4gIGNvbnN0IFtzbmFja2Jhck1lc3NhZ2UsIHNldFNuYWNrYmFyTWVzc2FnZV0gPSB1c2VTdGF0ZTxzdHJpbmc+KCcnKTtcblxuICBjb25zdCByb3V0ZXIgPSB1c2VSb3V0ZXIoKTtcblxuICBjb25zdCBoYW5kbGVDbG9zZVNuYWNrYmFyID0gKCkgPT4ge1xuICAgIHNldFNuYWNrYmFyT3BlbihmYWxzZSk7XG4gIH07XG5cbiAgY29uc3QgcmVnaXN0ZXIgPSBhc3luYyAoKSA9PiB7XG4gICAgaWYgKHBhc3N3b3JkICE9PSBjb25maXJtUGFzc3dvcmQpIHtcbiAgICAgIHNldFNuYWNrYmFyTWVzc2FnZSgnUGFzc3dvcmRzIGRvIG5vdCBtYXRjaCcpO1xuICAgICAgc2V0U25hY2tiYXJPcGVuKHRydWUpO1xuICAgICAgcmV0dXJuO1xuICAgIH1cblxuICAgIGNvbnN0IHsgZGF0YSwgZXJyb3IgfSA9IGF3YWl0IHN1cGFiYXNlXG4gICAgICAuZnJvbSgnVXNlcnMnKVxuICAgICAgLmluc2VydChbXG4gICAgICAgIHsgZmlyc3ROYW1lLCBsYXN0TmFtZSwgZW1haWwsIHBhc3N3b3JkIH0sXG4gICAgICBdKTtcbiAgICBpZiAoIWVycm9yKSB7XG4gICAgICBzZXRTbmFja2Jhck1lc3NhZ2UoJ1JlZ2lzdHJhdGlvbiBTdWNjZXNzZnVsIScpO1xuICAgICAgc2V0U25hY2tiYXJPcGVuKHRydWUpO1xuICAgICAgYXdhaXQgcm91dGVyLnB1c2goJy9sb2dpbicpO1xuICAgIH1cbiAgfVxuXG4gIHJldHVybiAoXG4gICAgPE1haW5MYXlvdXQ+XG4gICAgICA8R3JpZFxuICAgICAgICBjb250YWluZXJcbiAgICAgICAganVzdGlmeUNvbnRlbnQ9XCJjZW50ZXJcIlxuICAgICAgICBhbGlnbkl0ZW1zPVwiY2VudGVyXCJcbiAgICAgICAgc3g9e3sgbWluSGVpZ2h0OiBcImNhbGMoMTAwdmggLSA2NHB4IC0gMTAwcHgpXCIsIG1hcmdpbjogXCJhdXRvXCIsIG1heFdpZHRoOiBcIjQwMHB4XCIgfX1cbiAgICAgICAgY2xhc3NOYW1lPVwibG9naW5cIlxuICAgICAgPlxuICAgICAgICA8Zm9ybVxuICAgICAgICAgIGNsYXNzTmFtZT1cInJlZ2lzdGVyLWZvcm0gdy1bMTAwJV1cIj5cbiAgICAgICAgICA8R3JpZCBpdGVtIHhzPXsxMn0+XG4gICAgICAgICAgICA8VGV4dEZpZWxkXG4gICAgICAgICAgICAgIHZhbHVlPXtmaXJzdE5hbWV9XG4gICAgICAgICAgICAgIG9uQ2hhbmdlPXsoZSkgPT4gc2V0Rmlyc3ROYW1lKGUudGFyZ2V0LnZhbHVlKX1cbiAgICAgICAgICAgICAgbGFiZWw9XCJGaXJzdCBOYW1lXCJcbiAgICAgICAgICAgICAgZnVsbFdpZHRoXG4gICAgICAgICAgICAgIHJlcXVpcmVkXG4gICAgICAgICAgICAgIG1hcmdpbj1cIm5vcm1hbFwiXG4gICAgICAgICAgICAvPlxuICAgICAgICAgIDwvR3JpZD5cbiAgICAgICAgICA8R3JpZCBpdGVtIHhzPXsxMn0+XG4gICAgICAgICAgICA8VGV4dEZpZWxkXG4gICAgICAgICAgICAgIHZhbHVlPXtsYXN0TmFtZX1cbiAgICAgICAgICAgICAgb25DaGFuZ2U9eyhlKSA9PiBzZXRMYXN0TmFtZShlLnRhcmdldC52YWx1ZSl9XG4gICAgICAgICAgICAgIGxhYmVsPVwiTGFzdCBOYW1lXCJcbiAgICAgICAgICAgICAgZnVsbFdpZHRoXG4gICAgICAgICAgICAgIHJlcXVpcmVkXG4gICAgICAgICAgICAgIG1hcmdpbj1cIm5vcm1hbFwiIC8+XG4gICAgICAgICAgPC9HcmlkPlxuICAgICAgICAgIDxHcmlkIGl0ZW0geHM9ezEyfT5cbiAgICAgICAgICAgIDxUZXh0RmllbGRcbiAgICAgICAgICAgICAgdmFsdWU9e2VtYWlsfVxuICAgICAgICAgICAgICBvbkNoYW5nZT17KGUpID0+IHNldEVtYWlsKGUudGFyZ2V0LnZhbHVlKX1cbiAgICAgICAgICAgICAgdHlwZT1cImVtYWlsXCJcbiAgICAgICAgICAgICAgbGFiZWw9XCJFbWFpbCBBZGRyZXNzXCJcbiAgICAgICAgICAgICAgZnVsbFdpZHRoXG4gICAgICAgICAgICAgIHJlcXVpcmVkXG4gICAgICAgICAgICAgIG1hcmdpbj1cIm5vcm1hbFwiIC8+XG4gICAgICAgICAgPC9HcmlkPlxuICAgICAgICAgIDxHcmlkIGl0ZW0geHM9ezEyfT5cbiAgICAgICAgICAgIDxUZXh0RmllbGRcbiAgICAgICAgICAgICAgdmFsdWU9e3Bhc3N3b3JkfVxuICAgICAgICAgICAgICBvbkNoYW5nZT17KGUpID0+IHNldFBhc3N3b3JkKGUudGFyZ2V0LnZhbHVlKX1cbiAgICAgICAgICAgICAgdHlwZT1cInBhc3N3b3JkXCJcbiAgICAgICAgICAgICAgbGFiZWw9XCJQYXNzd29yZFwiXG4gICAgICAgICAgICAgIGZ1bGxXaWR0aFxuICAgICAgICAgICAgICByZXF1aXJlZFxuICAgICAgICAgICAgICBtYXJnaW49XCJub3JtYWxcIiAvPlxuICAgICAgICAgIDwvR3JpZD5cbiAgICAgICAgICA8R3JpZCBpdGVtIHhzPXsxMn0+XG4gICAgICAgICAgICA8VGV4dEZpZWxkXG4gICAgICAgICAgICAgIHZhbHVlPXtjb25maXJtUGFzc3dvcmR9XG4gICAgICAgICAgICAgIG9uQ2hhbmdlPXsoZSkgPT4gc2V0Q29uZmlybVBhc3N3b3JkKGUudGFyZ2V0LnZhbHVlKX1cbiAgICAgICAgICAgICAgdHlwZT1cInBhc3N3b3JkXCJcbiAgICAgICAgICAgICAgbGFiZWw9XCJDb25maXJtIFBhc3N3b3JkXCJcbiAgICAgICAgICAgICAgZnVsbFdpZHRoXG4gICAgICAgICAgICAgIHJlcXVpcmVkXG4gICAgICAgICAgICAgIG1hcmdpbj1cIm5vcm1hbFwiIC8+XG4gICAgICAgICAgPC9HcmlkPlxuICAgICAgICAgIDxCdXR0b25cbiAgICAgICAgICAgIHZhcmlhbnQ9XCJjb250YWluZWRcIlxuICAgICAgICAgICAgb25DbGljaz17YXN5bmMgKCkgPT4gYXdhaXQgcmVnaXN0ZXIoKX1cbiAgICAgICAgICAgIGZ1bGxXaWR0aFxuICAgICAgICAgICAgc3g9e3sgbXQ6IDIsIG1iOiAyIH19PlxuICAgICAgICAgICAgUmVnaXN0ZXJcbiAgICAgICAgICA8L0J1dHRvbj5cbiAgICAgICAgICA8R3JpZCBjb250YWluZXIgZGlyZWN0aW9uPVwiY29sdW1uXCIgYWxpZ25JdGVtcz1cImNlbnRlclwiIHN4PXt7IG1iOiAyIH19PlxuICAgICAgICAgICAgPEdyaWQgaXRlbT5cbiAgICAgICAgICAgICAgPExpbmsgbGVnYWN5QmVoYXZpb3IgaHJlZj1cIi9sb2dpblwiIHBhc3NIcmVmPlxuICAgICAgICAgICAgICAgIDxhIHN0eWxlPXt7IGNvbG9yOiBcIiMwYTQ3NzFcIiB9fT5BbHJlYWR5IGhhdmUgYW4gYWNjb3VudD8gU2lnbiBJbjwvYT5cbiAgICAgICAgICAgICAgPC9MaW5rPlxuICAgICAgICAgICAgPC9HcmlkPlxuICAgICAgICAgIDwvR3JpZD5cbiAgICAgICAgICA8U25hY2tiYXJcbiAgICAgICAgICAgIG9wZW49e3NuYWNrYmFyT3Blbn1cbiAgICAgICAgICAgIGF1dG9IaWRlRHVyYXRpb249ezYwMDB9XG4gICAgICAgICAgICBvbkNsb3NlPXtoYW5kbGVDbG9zZVNuYWNrYmFyfVxuICAgICAgICAgICAgbWVzc2FnZT17c25hY2tiYXJNZXNzYWdlfVxuICAgICAgICAgICAgYWN0aW9uPXtcbiAgICAgICAgICAgICAgPEJ1dHRvbiBjb2xvcj1cInNlY29uZGFyeVwiIHNpemU9XCJzbWFsbFwiIG9uQ2xpY2s9e2hhbmRsZUNsb3NlU25hY2tiYXJ9PlxuICAgICAgICAgICAgICAgIENsb3NlXG4gICAgICAgICAgICAgIDwvQnV0dG9uPlxuICAgICAgICAgICAgfVxuICAgICAgICAgIC8+XG4gICAgICAgIDwvZm9ybT5cbiAgICAgIDwvR3JpZD5cbiAgICA8L01haW5MYXlvdXQ+XG4gICk7XG59O1xuXG5leHBvcnQgZGVmYXVsdCBSZWdpc3RlcjsiXSwibmFtZXMiOlsiUmVhY3QiLCJNYWluTGF5b3V0IiwiR3JpZCIsIlRleHRGaWVsZCIsIkJ1dHRvbiIsIlNuYWNrYmFyIiwiTGluayIsInVzZVJvdXRlciIsInVzZVN0YXRlIiwic3VwYWJhc2UiLCJSZWdpc3RlciIsImZpcnN0TmFtZSIsInNldEZpcnN0TmFtZSIsImxhc3ROYW1lIiwic2V0TGFzdE5hbWUiLCJlbWFpbCIsInNldEVtYWlsIiwicGFzc3dvcmQiLCJzZXRQYXNzd29yZCIsImNvbmZpcm1QYXNzd29yZCIsInNldENvbmZpcm1QYXNzd29yZCIsInNuYWNrYmFyT3BlbiIsInNldFNuYWNrYmFyT3BlbiIsInNuYWNrYmFyTWVzc2FnZSIsInNldFNuYWNrYmFyTWVzc2FnZSIsInJvdXRlciIsImhhbmRsZUNsb3NlU25hY2tiYXIiLCJyZWdpc3RlciIsImRhdGEiLCJlcnJvciIsImZyb20iLCJpbnNlcnQiLCJwdXNoIiwiY29udGFpbmVyIiwianVzdGlmeUNvbnRlbnQiLCJhbGlnbkl0ZW1zIiwic3giLCJtaW5IZWlnaHQiLCJtYXJnaW4iLCJtYXhXaWR0aCIsImNsYXNzTmFtZSIsImZvcm0iLCJpdGVtIiwieHMiLCJ2YWx1ZSIsIm9uQ2hhbmdlIiwiZSIsInRhcmdldCIsImxhYmVsIiwiZnVsbFdpZHRoIiwicmVxdWlyZWQiLCJ0eXBlIiwidmFyaWFudCIsIm9uQ2xpY2siLCJtdCIsIm1iIiwiZGlyZWN0aW9uIiwibGVnYWN5QmVoYXZpb3IiLCJocmVmIiwicGFzc0hyZWYiLCJhIiwic3R5bGUiLCJjb2xvciIsIm9wZW4iLCJhdXRvSGlkZUR1cmF0aW9uIiwib25DbG9zZSIsIm1lc3NhZ2UiLCJhY3Rpb24iLCJzaXplIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./pages/register.tsx\n");
+
+/***/ }),
+
+/***/ "./utils/supabaseClient.js":
+/*!*********************************!*\
+  !*** ./utils/supabaseClient.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   supabase: () => (/* binding */ supabase)\n/* harmony export */ });\n/* harmony import */ var _supabase_supabase_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @supabase/supabase-js */ \"@supabase/supabase-js\");\n/* harmony import */ var _supabase_supabase_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_supabase_supabase_js__WEBPACK_IMPORTED_MODULE_0__);\n\nconst supabaseUrl = \"https://fyroqpgxuanipayzpanw.supabase.co\";\nconst supabaseAnonKey = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzMDYyNDYyMCwiZXhwIjoxOTQ2MjAwNjIwfQ.7rXwJAX3KQA2MN5jRmIKF31xBftcSBtmgA9U4l-JpRA\";\nconst supabase = (0,_supabase_supabase_js__WEBPACK_IMPORTED_MODULE_0__.createClient)(supabaseUrl, supabaseAnonKey);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi91dGlscy9zdXBhYmFzZUNsaWVudC5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFBb0Q7QUFFcEQsTUFBTUMsY0FBY0MsMENBQW9DO0FBQ3hELE1BQU1HLGtCQUFrQkgscUpBQXlDO0FBRTFELE1BQU1LLFdBQVdQLG1FQUFZQSxDQUFDQyxhQUFhSSxpQkFBZ0IiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9tYXRoX2FwcF92My8uL3V0aWxzL3N1cGFiYXNlQ2xpZW50LmpzPzVhZDEiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY3JlYXRlQ2xpZW50IH0gZnJvbSAnQHN1cGFiYXNlL3N1cGFiYXNlLWpzJ1xuXG5jb25zdCBzdXBhYmFzZVVybCA9IHByb2Nlc3MuZW52Lk5FWFRfUFVCTElDX1NVUEFCQVNFX1VSTFxuY29uc3Qgc3VwYWJhc2VBbm9uS2V5ID0gcHJvY2Vzcy5lbnYuTkVYVF9QVUJMSUNfU1VQQUJBU0VfQU5PTl9LRVlcblxuZXhwb3J0IGNvbnN0IHN1cGFiYXNlID0gY3JlYXRlQ2xpZW50KHN1cGFiYXNlVXJsLCBzdXBhYmFzZUFub25LZXkpIl0sIm5hbWVzIjpbImNyZWF0ZUNsaWVudCIsInN1cGFiYXNlVXJsIiwicHJvY2VzcyIsImVudiIsIk5FWFRfUFVCTElDX1NVUEFCQVNFX1VSTCIsInN1cGFiYXNlQW5vbktleSIsIk5FWFRfUFVCTElDX1NVUEFCQVNFX0FOT05fS0VZIiwic3VwYWJhc2UiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./utils/supabaseClient.js\n");
+
+/***/ }),
+
+/***/ "@mui/base":
+/*!****************************!*\
+  !*** external "@mui/base" ***!
+  \****************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/base");
+
+/***/ }),
+
+/***/ "@mui/base/ClickAwayListener":
+/*!**********************************************!*\
+  !*** external "@mui/base/ClickAwayListener" ***!
+  \**********************************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/base/ClickAwayListener");
+
+/***/ }),
+
+/***/ "@mui/base/FocusTrap":
+/*!**************************************!*\
+  !*** external "@mui/base/FocusTrap" ***!
+  \**************************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/base/FocusTrap");
+
+/***/ }),
+
+/***/ "@mui/base/Portal":
+/*!***********************************!*\
+  !*** external "@mui/base/Portal" ***!
+  \***********************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/base/Portal");
+
+/***/ }),
+
+/***/ "@mui/base/unstable_useModal":
+/*!**********************************************!*\
+  !*** external "@mui/base/unstable_useModal" ***!
+  \**********************************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/base/unstable_useModal");
+
+/***/ }),
+
+/***/ "@mui/base/useSnackbar":
+/*!****************************************!*\
+  !*** external "@mui/base/useSnackbar" ***!
+  \****************************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/base/useSnackbar");
+
+/***/ }),
+
+/***/ "@mui/base/utils":
+/*!**********************************!*\
+  !*** external "@mui/base/utils" ***!
+  \**********************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/base/utils");
 
 /***/ }),
 
@@ -120,6 +210,16 @@ module.exports = require("@mui/material/styles");
 /***/ ((module) => {
 
 module.exports = require("@mui/system");
+
+/***/ }),
+
+/***/ "@mui/system/RtlProvider":
+/*!******************************************!*\
+  !*** external "@mui/system/RtlProvider" ***!
+  \******************************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/system/RtlProvider");
 
 /***/ }),
 
@@ -173,6 +273,16 @@ module.exports = require("@mui/system/useThemeProps");
 
 /***/ }),
 
+/***/ "@mui/utils/HTMLElementType":
+/*!*********************************************!*\
+  !*** external "@mui/utils/HTMLElementType" ***!
+  \*********************************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/utils/HTMLElementType");
+
+/***/ }),
+
 /***/ "@mui/utils/capitalize":
 /*!****************************************!*\
   !*** external "@mui/utils/capitalize" ***!
@@ -203,6 +313,16 @@ module.exports = require("@mui/utils/composeClasses");
 
 /***/ }),
 
+/***/ "@mui/utils/debounce":
+/*!**************************************!*\
+  !*** external "@mui/utils/debounce" ***!
+  \**************************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/utils/debounce");
+
+/***/ }),
+
 /***/ "@mui/utils/deepmerge":
 /*!***************************************!*\
   !*** external "@mui/utils/deepmerge" ***!
@@ -210,6 +330,16 @@ module.exports = require("@mui/utils/composeClasses");
 /***/ ((module) => {
 
 module.exports = require("@mui/utils/deepmerge");
+
+/***/ }),
+
+/***/ "@mui/utils/elementAcceptingRef":
+/*!*************************************************!*\
+  !*** external "@mui/utils/elementAcceptingRef" ***!
+  \*************************************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/utils/elementAcceptingRef");
 
 /***/ }),
 
@@ -253,6 +383,16 @@ module.exports = require("@mui/utils/generateUtilityClasses");
 
 /***/ }),
 
+/***/ "@mui/utils/getScrollbarSize":
+/*!**********************************************!*\
+  !*** external "@mui/utils/getScrollbarSize" ***!
+  \**********************************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/utils/getScrollbarSize");
+
+/***/ }),
+
 /***/ "@mui/utils/integerPropType":
 /*!*********************************************!*\
   !*** external "@mui/utils/integerPropType" ***!
@@ -260,6 +400,36 @@ module.exports = require("@mui/utils/generateUtilityClasses");
 /***/ ((module) => {
 
 module.exports = require("@mui/utils/integerPropType");
+
+/***/ }),
+
+/***/ "@mui/utils/isMuiElement":
+/*!******************************************!*\
+  !*** external "@mui/utils/isMuiElement" ***!
+  \******************************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/utils/isMuiElement");
+
+/***/ }),
+
+/***/ "@mui/utils/ownerDocument":
+/*!*******************************************!*\
+  !*** external "@mui/utils/ownerDocument" ***!
+  \*******************************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/utils/ownerDocument");
+
+/***/ }),
+
+/***/ "@mui/utils/ownerWindow":
+/*!*****************************************!*\
+  !*** external "@mui/utils/ownerWindow" ***!
+  \*****************************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/utils/ownerWindow");
 
 /***/ }),
 
@@ -293,6 +463,26 @@ module.exports = require("@mui/utils/resolveProps");
 
 /***/ }),
 
+/***/ "@mui/utils/useControlled":
+/*!*******************************************!*\
+  !*** external "@mui/utils/useControlled" ***!
+  \*******************************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/utils/useControlled");
+
+/***/ }),
+
+/***/ "@mui/utils/useEnhancedEffect":
+/*!***********************************************!*\
+  !*** external "@mui/utils/useEnhancedEffect" ***!
+  \***********************************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/utils/useEnhancedEffect");
+
+/***/ }),
+
 /***/ "@mui/utils/useEventCallback":
 /*!**********************************************!*\
   !*** external "@mui/utils/useEventCallback" ***!
@@ -313,6 +503,16 @@ module.exports = require("@mui/utils/useForkRef");
 
 /***/ }),
 
+/***/ "@mui/utils/useId":
+/*!***********************************!*\
+  !*** external "@mui/utils/useId" ***!
+  \***********************************/
+/***/ ((module) => {
+
+module.exports = require("@mui/utils/useId");
+
+/***/ }),
+
 /***/ "@mui/utils/useIsFocusVisible":
 /*!***********************************************!*\
   !*** external "@mui/utils/useIsFocusVisible" ***!
@@ -330,6 +530,16 @@ module.exports = require("@mui/utils/useIsFocusVisible");
 /***/ ((module) => {
 
 module.exports = require("@mui/utils/useTimeout");
+
+/***/ }),
+
+/***/ "@supabase/supabase-js":
+/*!****************************************!*\
+  !*** external "@supabase/supabase-js" ***!
+  \****************************************/
+/***/ ((module) => {
+
+module.exports = require("@supabase/supabase-js");
 
 /***/ }),
 
@@ -413,6 +623,16 @@ module.exports = require("react/jsx-runtime");
 
 /***/ }),
 
+/***/ "fs":
+/*!*********************!*\
+  !*** external "fs" ***!
+  \*********************/
+/***/ ((module) => {
+
+module.exports = require("fs");
+
+/***/ }),
+
 /***/ "path":
 /*!***********************!*\
   !*** external "path" ***!
@@ -420,6 +640,26 @@ module.exports = require("react/jsx-runtime");
 /***/ ((module) => {
 
 module.exports = require("path");
+
+/***/ }),
+
+/***/ "stream":
+/*!*************************!*\
+  !*** external "stream" ***!
+  \*************************/
+/***/ ((module) => {
+
+module.exports = require("stream");
+
+/***/ }),
+
+/***/ "zlib":
+/*!***********************!*\
+  !*** external "zlib" ***!
+  \***********************/
+/***/ ((module) => {
+
+module.exports = require("zlib");
 
 /***/ })
 
