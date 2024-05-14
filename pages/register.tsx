@@ -2,44 +2,47 @@ import React from 'react';
 import MainLayout from '../layout/mainLayout';
 import { Grid, TextField, Button, Snackbar } from "@mui/material";
 import Link from "next/link";
-import { useRouter } from 'next/router';
 import { useState } from "react";
 import { supabase } from "../utils/supabaseClient";
 
 
 const Register: React.FC = () => {
-  const [firstName, setFirstName] = useState<string>('');
-  const [lastName, setLastName] = useState<string>('');
+  const [first_name, setFirstName] = useState<string>('');
+  const [last_name, setLastName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [confirmPassword, setConfirmPassword] = useState<string>('');
   const [snackbarOpen, setSnackbarOpen] = useState<boolean>(false);
   const [snackbarMessage, setSnackbarMessage] = useState<string>('');
 
-  const router = useRouter();
-
   const handleCloseSnackbar = () => {
     setSnackbarOpen(false);
   };
 
-  const register = async () => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     if (password !== confirmPassword) {
       setSnackbarMessage('Passwords do not match');
       setSnackbarOpen(true);
       return;
     }
 
-    const { data, error } = await supabase
-      .from('Users')
-      .insert([
-        { firstName, lastName, email, password },
-      ]);
-    if (!error) {
-      setSnackbarMessage('Registration Successful!');
+    try {
+      const { data, error } = await supabase
+        .from('Users')
+        .insert([{ first_name, last_name, email, password }]);
+
+      if (error) {
+        setSnackbarMessage('Registration failed. Please try again.');
+        setSnackbarOpen(true);
+      } else {
+        // Registration successful, redirect or perform any other action
+      }
+    } catch (error) {
+      setSnackbarMessage('An error occurred while registering. Please try again later.');
       setSnackbarOpen(true);
-      await router.push('/login');
     }
-  }
+  };
 
   return (
     <MainLayout>
@@ -47,16 +50,21 @@ const Register: React.FC = () => {
         container
         justifyContent="center"
         alignItems="center"
-        sx={{ minHeight: "calc(100vh - 64px - 100px)", margin: "auto", maxWidth: "400px" }}
-        className="login"
+        spacing={2}
+        sx={{ minHeight: "calc(100vh - 64px - 100px)", margin: "auto", maxWidth: "400px"  }}
+        className="register"
       >
         <form
+          onSubmit={handleSubmit}
           className="register-form w-[100%]">
           <Grid item xs={12}>
             <TextField
-              value={firstName}
+              value={first_name}
               onChange={(e) => setFirstName(e.target.value)}
               label="First Name"
+              id="first_name"
+              autoFocus
+              variant="outlined"
               fullWidth
               required
               margin="normal"
@@ -64,9 +72,11 @@ const Register: React.FC = () => {
           </Grid>
           <Grid item xs={12}>
             <TextField
-              value={lastName}
+              value={last_name}
               onChange={(e) => setLastName(e.target.value)}
               label="Last Name"
+              variant='outlined'
+              id="last_name"
               fullWidth
               required
               margin="normal" />
@@ -76,6 +86,8 @@ const Register: React.FC = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               type="email"
+              id="email"
+              variant='outlined'
               label="Email Address"
               fullWidth
               required
@@ -86,7 +98,9 @@ const Register: React.FC = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
+              id="password"
               label="Password"
+              variant='outlined'
               fullWidth
               required
               margin="normal" />
@@ -96,6 +110,7 @@ const Register: React.FC = () => {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               type="password"
+              variant='outlined'
               label="Confirm Password"
               fullWidth
               required
@@ -103,7 +118,7 @@ const Register: React.FC = () => {
           </Grid>
           <Button
             variant="contained"
-            onClick={async () => await register()}
+            type="submit"
             fullWidth
             sx={{ mt: 2, mb: 2 }}>
             Register

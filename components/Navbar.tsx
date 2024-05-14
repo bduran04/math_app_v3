@@ -42,7 +42,7 @@ const Navbar = () => {
                 color="inherit"
                 aria-describedby={login.describedBy}>
                 <Button color="inherit" startIcon={<LoginIcon />} className="text-white" style={{ marginRight: "2rem", color: "#f5f5f5" }}>
-                  Login
+                Sign In
                 </Button>
               </Link>
             </Grid>

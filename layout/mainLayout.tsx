@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer"
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import './globals.module.css'
 
 interface MainLayoutProps {
   children: ReactNode;
