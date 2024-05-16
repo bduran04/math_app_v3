@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import MainLayout from '../layout';
 import { Grid, TextField, Button, Snackbar } from "@mui/material";
@@ -45,7 +46,7 @@ const Register: React.FC = () => {
   };
 
   return (
-    <MainLayout>
+    <>
       <Grid
         container
         justifyContent="center"
@@ -143,7 +144,7 @@ const Register: React.FC = () => {
           />
         </form>
       </Grid>
-    </MainLayout>
+    </>
   );
 };
 

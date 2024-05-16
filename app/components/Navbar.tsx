@@ -2,7 +2,7 @@ import { AppBar, Toolbar, Grid, Button, Box } from "@mui/material";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../assets/math_solver_white.png";
-import LoginIcon from '@mui/icons-material/Login';
+import PersonIcon from '@mui/icons-material/Person';
 
 const home = {
   title: "Home",
@@ -29,7 +29,7 @@ const Navbar = () => {
                   className="nav-link mx-4"
                   aria-describedby={home.describedBy}
                 >
-                  <Image src={home.image} alt={home.title} height={75} style={{ marginLeft: "2rem" }} />
+                  <Image src={home.image} alt={home.title} height={65} style={{ marginLeft: "2rem" }} />
                 </a>
               </Link>
             </Grid>
@@ -41,8 +41,8 @@ const Navbar = () => {
                 className="nav-link mx-4"
                 color="inherit"
                 aria-describedby={login.describedBy}>
-                <Button color="inherit" startIcon={<LoginIcon />} className="text-white" style={{ marginRight: "2rem", color: "#f5f5f5" }}>
-                Sign In
+                <Button color="inherit" startIcon={<PersonIcon />} className="text-white" style={{ color: "#f5f5f5" }}>
+                  Sign In
                 </Button>
               </Link>
             </Grid>

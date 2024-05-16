@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import Link from "next/link";
 import MainLayout from '../layout';
@@ -15,7 +16,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <MainLayout>
+    <>
       <Grid
         container
         justifyContent="center"
@@ -69,7 +70,7 @@ const Login: React.FC = () => {
           </Grid>
         </form>
       </Grid>
-    </MainLayout>
+    </>
   );
 };
 
