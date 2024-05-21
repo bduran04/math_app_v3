@@ -1,7 +1,7 @@
 import { AppBar, Toolbar, Grid, Button, Box } from "@mui/material";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../../assets/math_solver_white.png";
+import logo from "../../assets/math-solver_2.png";
 import PersonIcon from '@mui/icons-material/Person';
 
 const home = {

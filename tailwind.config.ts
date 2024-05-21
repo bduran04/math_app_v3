@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        newFont: ['newFont', 'sans-serif']
+      }
     },
   },
   plugins: [],
