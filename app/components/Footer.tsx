@@ -1,3 +1,4 @@
+import React from 'react';
 import { Grid, Typography } from '@mui/material';
 
 const Footer: React.FC = () => {
@@ -6,9 +7,9 @@ const Footer: React.FC = () => {
       <Grid
         container
         padding={2}
-        direction={'column'}
-        alignItems={'center'}
-        className='footer'
+        direction="column"
+        alignItems="center"
+        className="footer"
         style={{ backgroundColor: '#fbf7ef' }}
       >
         <Typography>
@@ -20,3 +21,4 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+

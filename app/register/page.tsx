@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Grid, TextField, Button, Snackbar, Typography, Box, IconButton } from "@mui/material";
 import Link from "next/link";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowCircleLeftTwoToneIcon from '@mui/icons-material/ArrowCircleLeftTwoTone';
 import { supabase } from "../utils/supabaseClient";
 
 const Register: React.FC = () => {
@@ -44,17 +44,17 @@ const Register: React.FC = () => {
   };
 
   return (
-    <div style={{backgroundColor: "#fbf7ef"}}>
-      <Link legacyBehavior href="/login" passHref style={{ position: 'absolute',  left: '16px', backgroundColor: "inherit" }}>
-        <IconButton>
-          <ArrowBackIcon sx={{ color: "#aba3ff" }} />
+    <div style={{ backgroundColor: "#fbf7ef" }}>
+      <Link legacyBehavior href="/login" passHref>
+        <IconButton style={{ position: 'absolute', left: '16px', backgroundColor: "inherit" }}>
+          <ArrowCircleLeftTwoToneIcon sx={{ color: "#aba3ff" }} />
         </IconButton>
       </Link>
       <Grid
         container
         justifyContent="center"
         alignItems="center"
-        sx={{ minHeight: "calc(100vh - 64px - 100px)"}}
+        sx={{ minHeight: "calc(100vh - 64px - 100px)" }}
         className="register"
       >
         <Box
@@ -89,7 +89,8 @@ const Register: React.FC = () => {
                 id="last_name"
                 fullWidth
                 required
-                margin="normal" />
+                margin="normal"
+              />
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -101,7 +102,8 @@ const Register: React.FC = () => {
                 label="Email Address"
                 fullWidth
                 required
-                margin="normal" />
+                margin="normal"
+              />
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -113,7 +115,8 @@ const Register: React.FC = () => {
                 variant='outlined'
                 fullWidth
                 required
-                margin="normal" />
+                margin="normal"
+              />
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -124,7 +127,8 @@ const Register: React.FC = () => {
                 label="Confirm Password"
                 fullWidth
                 required
-                margin="normal" />
+                margin="normal"
+              />
             </Grid>
             <Button
               variant="contained"
@@ -160,4 +164,3 @@ const Register: React.FC = () => {
 };
 
 export default Register;
-

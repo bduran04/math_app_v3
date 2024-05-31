@@ -3,7 +3,7 @@ import React from 'react';
 import Link from "next/link";
 import MainLayout from '../layout';
 import { TextField, Button, Grid, Typography, Box, IconButton } from "@mui/material";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowCircleLeftTwoToneIcon from '@mui/icons-material/ArrowCircleLeftTwoTone';
 
 const Login: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -17,10 +17,10 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div style={{backgroundColor: "#fbf7ef"}}>
-     <Link legacyBehavior href="/" passHref style={{ position: 'absolute',  left: '16px', backgroundColor: "inherit" }}>
-        <IconButton>
-          <ArrowBackIcon sx={{ color: "#aba3ff" }} />
+    <div style={{ backgroundColor: "#fbf7ef" }}>
+      <Link legacyBehavior href="/" passHref>
+        <IconButton style={{ position: 'absolute', left: '16px', backgroundColor: "inherit" }}>
+          <ArrowCircleLeftTwoToneIcon sx={{ color: "#aba3ff" }} />
         </IconButton>
       </Link>
       <Grid
@@ -33,7 +33,7 @@ const Login: React.FC = () => {
         <Box
           sx={{ maxWidth: "400px", width: "100%", textAlign: 'center' }}
         >
-          <Typography variant="h1" component="h1" >
+          <Typography variant="h1" component="h1">
             Hello!
           </Typography>
           <Typography variant="h4" component="h2" gutterBottom>
