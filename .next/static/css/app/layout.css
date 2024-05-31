@@ -546,8 +546,15 @@ video {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
 .ml-4 {
   margin-left: 1rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
 }
 .flex {
   display: flex;
@@ -558,8 +565,23 @@ video {
 .h-screen {
   height: 100vh;
 }
+.h-auto {
+  height: auto;
+}
 .w-\[100\%\] {
   width: 100%;
+}
+.w-full {
+  width: 100%;
+}
+.max-w-full {
+  max-width: 100%;
+}
+.max-w-xs {
+  max-width: 20rem;
+}
+.max-w-md {
+  max-width: 28rem;
 }
 .items-center {
   align-items: center;
@@ -580,6 +602,9 @@ video {
 .bg-center {
   background-position: center;
 }
+.object-contain {
+  object-fit: contain;
+}
 .p-4 {
   padding: 1rem;
 }
@@ -590,17 +615,8 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"app/layout.tsx","import":"","arguments":[{"src":[{"path":"../public/font_2.ttf","weight":"800"}],"variable":"--font-newFont"}],"variableName":"newFont"} ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-@font-face {
-font-family: '__newFont_c25a00';
-src: url(/_next/static/media/f4a4501e5640e15c-s.p.ttf) format('truetype');
-font-display: swap;
-font-weight: 800;
-}@font-face {font-family: '__newFont_Fallback_c25a00';src: local("Arial");ascent-override: 91.26%;descent-override: 22.82%;line-gap-override: 0.00%;size-adjust: 87.66%
-}.__className_c25a00 {font-family: '__newFont_c25a00', '__newFont_Fallback_c25a00';font-weight: 800
-}.__variable_c25a00 {--font-newFont: '__newFont_c25a00', '__newFont_Fallback_c25a00'
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 

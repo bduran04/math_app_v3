@@ -9,9 +9,10 @@ const Footer: React.FC = () => {
         direction={'column'}
         alignItems={'center'}
         className='footer'
+        style={{ backgroundColor: '#fbf7ef' }}
       >
         <Typography>
-          &copy; {new Date().getFullYear()} Math App
+          &copy; {new Date().getFullYear()} Math Solver
         </Typography>
       </Grid>
     </>
