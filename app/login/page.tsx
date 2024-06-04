@@ -4,17 +4,9 @@ import Link from "next/link";
 import MainLayout from '../layout';
 import { TextField, Button, Grid, Typography, Box, IconButton } from "@mui/material";
 import ArrowCircleLeftTwoToneIcon from '@mui/icons-material/ArrowCircleLeftTwoTone';
+import { login } from './actions';
 
 const Login: React.FC = () => {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const email = data.get("email");
-    const password = data.get("password");
-
-    // Handle form submission
-    console.log({ email, password });
-  };
 
   return (
     <div style={{ backgroundColor: "#fbf7ef" }}>
@@ -40,7 +32,6 @@ const Login: React.FC = () => {
             Sign in to your account
           </Typography>
           <form
-            onSubmit={handleSubmit}
             className="login-form"
           >
             <Grid item xs={12}>
@@ -72,6 +63,7 @@ const Login: React.FC = () => {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              formAction={login}
             >
               Sign In
             </Button>

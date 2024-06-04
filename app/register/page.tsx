@@ -1,46 +1,56 @@
 'use client';
 import React, { useState } from 'react';
-import { Grid, TextField, Button, Snackbar, Typography, Box, IconButton } from "@mui/material";
+import { Grid, TextField, Button, Snackbar, Alert, Typography, Box, IconButton, Divider } from "@mui/material";
 import Link from "next/link";
 import ArrowCircleLeftTwoToneIcon from '@mui/icons-material/ArrowCircleLeftTwoTone';
-import { supabase } from "../utils/supabaseClient";
+import GoogleIcon from '@mui/icons-material/Google';
+import { signup } from '../login/actions';
 
 const Register: React.FC = () => {
-  const [first_name, setFirstName] = useState<string>('');
-  const [last_name, setLastName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [confirmPassword, setConfirmPassword] = useState<string>('');
+  const [error, setError] = useState<string | null>(null);
   const [snackbarOpen, setSnackbarOpen] = useState<boolean>(false);
   const [snackbarMessage, setSnackbarMessage] = useState<string>('');
+  const [snackbarSeverity, setSnackbarSeverity] = useState<'success' | 'error'>('success');
 
-  const handleCloseSnackbar = () => {
-    setSnackbarOpen(false);
+  const validatePasswordConfirmation = (password: string, confirmPassword: string): boolean => {
+    return password === confirmPassword;
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (password !== confirmPassword) {
+
+    if (!validatePasswordConfirmation(password, confirmPassword)) {
+      setError('Passwords do not match');
+      setSnackbarSeverity('error');
       setSnackbarMessage('Passwords do not match');
       setSnackbarOpen(true);
       return;
     }
 
-    try {
-      const { data, error } = await supabase
-        .from('Users')
-        .insert([{ first_name, last_name, email, password }]);
+    const formData = new FormData(event.currentTarget);
 
-      if (error) {
-        setSnackbarMessage('Registration failed. Please try again.');
-        setSnackbarOpen(true);
-      } else {
-        // Registration successful, redirect or perform any other action
-      }
+    try {
+      // Remove confirmPassword from formData
+      formData.delete('confirmPassword');
+
+      await signup(formData);
+      // Handle successful signup
+      setSnackbarSeverity('success');
+      setSnackbarMessage('Signup successful!');
+      setSnackbarOpen(true);
     } catch (error) {
-      setSnackbarMessage('An error occurred while registering. Please try again later.');
+      // Handle signup error
+      console.error('Signup error', error);
+      setSnackbarSeverity('error');
+      setSnackbarMessage('Signup failed. Please try again.');
       setSnackbarOpen(true);
     }
+  };
+
+  const handleSnackbarClose = () => {
+    setSnackbarOpen(false);
   };
 
   return (
@@ -64,13 +74,12 @@ const Register: React.FC = () => {
             Create your account
           </Typography>
           <form
-            onSubmit={handleSubmit}
             className="register-form"
+            onSubmit={handleSubmit}
           >
             <Grid item xs={12}>
               <TextField
-                value={first_name}
-                onChange={(e) => setFirstName(e.target.value)}
+                name="first_name"
                 label="First Name"
                 id="first_name"
                 autoFocus
@@ -82,8 +91,7 @@ const Register: React.FC = () => {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                value={last_name}
-                onChange={(e) => setLastName(e.target.value)}
+                name="last_name"
                 label="Last Name"
                 variant='outlined'
                 id="last_name"
@@ -94,8 +102,7 @@ const Register: React.FC = () => {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                name="email"
                 type="email"
                 id="email"
                 variant='outlined'
@@ -107,8 +114,7 @@ const Register: React.FC = () => {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                name="password"
                 type="password"
                 id="password"
                 label="Password"
@@ -116,20 +122,28 @@ const Register: React.FC = () => {
                 fullWidth
                 required
                 margin="normal"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                name="confirmPassword"
                 type="password"
                 variant='outlined'
                 label="Confirm Password"
                 fullWidth
                 required
                 margin="normal"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </Grid>
+            {error && (
+              <Typography color="error" variant="body2" sx={{ mt: 1 }}>
+                {error}
+              </Typography>
+            )}
             <Button
               variant="contained"
               type="submit"
@@ -145,20 +159,31 @@ const Register: React.FC = () => {
                 </Link>
               </Grid>
             </Grid>
-            <Snackbar
-              open={snackbarOpen}
-              autoHideDuration={6000}
-              onClose={handleCloseSnackbar}
-              message={snackbarMessage}
-              action={
-                <Button color="secondary" size="small" onClick={handleCloseSnackbar}>
-                  Close
-                </Button>
-              }
-            />
+
+            <Divider sx={{ mb: 1 }}>or</Divider>
+
+            <Button
+              variant="outlined"
+              fullWidth
+              color="primary"
+              sx={{ mt: 3, mb: 2 }}
+              startIcon={<GoogleIcon />}
+              // Handle Google login
+            >
+              Sign In with Google
+            </Button>
           </form>
         </Box>
       </Grid>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+      >
+        <Alert onClose={handleSnackbarClose} severity={snackbarSeverity} sx={{ width: '100%' }}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </div>
   );
 };

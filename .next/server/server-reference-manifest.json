@@ -1,5 +1,26 @@
 {
-  "node": {},
+  "node": {
+    "5df7d83b0274095e781e18a294c6e376ca98a73e": {
+      "workers": {
+        "app/login/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fbduran04%2FDesktop%2FProjects%2Fmath_app_v3%2Fapp%2Flogin%2Factions.ts%22%2C%5B%22login%22%2C%22signup%22%5D%5D%5D&__client_imported__=true!",
+        "app/register/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fbduran04%2FDesktop%2FProjects%2Fmath_app_v3%2Fapp%2Flogin%2Factions.ts%22%2C%5B%22login%22%2C%22signup%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/login/page": "action-browser",
+        "app/register/page": "action-browser"
+      }
+    },
+    "922fdec26be06062202dc7a33cba62dd0861ba6d": {
+      "workers": {
+        "app/login/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fbduran04%2FDesktop%2FProjects%2Fmath_app_v3%2Fapp%2Flogin%2Factions.ts%22%2C%5B%22login%22%2C%22signup%22%5D%5D%5D&__client_imported__=true!",
+        "app/register/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fbduran04%2FDesktop%2FProjects%2Fmath_app_v3%2Fapp%2Flogin%2Factions.ts%22%2C%5B%22login%22%2C%22signup%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/login/page": "action-browser",
+        "app/register/page": "action-browser"
+      }
+    }
+  },
   "edge": {},
-  "encryptionKey": "bsFr+jOTvQGqUb+tIR1FXNJkDSKmUwbqu2hbmGBw5KA="
+  "encryptionKey": "DhzdUfewgto39a2ywjcjN0oidgxE52WQmyAlNWwvcvw="
 }
