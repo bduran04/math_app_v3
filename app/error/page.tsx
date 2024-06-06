@@ -1,3 +1,7 @@
 export default function ErrorPage() {
-    return <p>Sorry, something went wrong</p>
+    return
+    <div style={{ backgroundColor: "#fbf7ef" }}>
+     <p>Sorry, something went wrong</p>
+     </div>
+
   }
