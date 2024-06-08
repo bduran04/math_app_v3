@@ -44,19 +44,17 @@ export async function updateSession(request: NextRequest) {
     }
   );
 
-  const {
-    data: { user },
-    error,
-  } = await supabase.auth.getUser();
+  const { data, error } = await supabase.auth.getUser();
 
   if (error) {
     console.error('Error fetching user:', error.message);
-  } else if (user) {
-    // Store user data in a cookie
+  } else if (data.user) {
     const userData = {
-      id: user.id,
-      email: user.email,
-      fullName: user.user_metadata.full_name,
+      id: data.user.id,
+      email: data.user.email,
+      fullName: data.user.user_metadata?.first_name || '',
+      lastName: data.user.user_metadata?.last_name || '',
+      // Add other metadata fields as needed
     };
     response.cookies.set('user-data', JSON.stringify(userData), { httpOnly: true });
   }

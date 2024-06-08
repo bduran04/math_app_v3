@@ -5,9 +5,10 @@ interface UserData {
   id: string;
   email: string;
   fullName: string;
+  lastName: string;
 }
 
-const getUserData = async (): Promise<UserData | null> => {
+const getUserData = (): UserData | null => {
   const cookieStore = cookies();
   const userDataCookie = cookieStore.get('user-data');
   
@@ -18,25 +19,27 @@ const getUserData = async (): Promise<UserData | null> => {
   return null;
 };
 
-const Dashboard = async () => {
-  const userData = await getUserData();
+const Dashboard = () => {
+  const userData = getUserData();
 
   if (!userData) {
     return (
+      <div style={{ backgroundColor: "#fbf7ef" }}>
       <Container>
         <Typography variant="h4">User not found. Please log in.</Typography>
       </Container>
+      </div>
     );
   }
 
-console.log("userData", userData)
+  const firstName = userData.fullName;
 
   return (
-    <Container>
+    <div style={{ backgroundColor: "#fbf7ef" }}>
       <Typography variant="h4">
-        Hello, welcome to the Dashboard Page!
+        Hello {firstName}, welcome to the Dashboard Page!
       </Typography>
-    </Container>
+    </div>
   );
 };
 
