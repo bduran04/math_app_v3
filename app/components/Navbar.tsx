@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { AppBar, Toolbar, Grid, Button } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../assets/math_solver_black.png';
 import PersonIcon from '@mui/icons-material/Person';
-import { useRouter } from 'next/router';
 
 interface NavLink {
   title: string;
@@ -31,7 +33,6 @@ const Navbar: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    // Check if user data is present in cookies
     const userData = document.cookie.split('; ').find(row => row.startsWith('user-data='));
     setIsLoggedIn(!!userData);
   }, []);
@@ -54,15 +55,9 @@ const Navbar: React.FC = () => {
       <Toolbar style={{ minHeight: '48px', paddingLeft: '1rem', paddingRight: '1rem' }} disableGutters>
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
-            <Link legacyBehavior href={home.path} passHref>
-              <a
-                id={home.title + '-link'}
-                className="nav-link mx-2"
-                aria-describedby={home.describedBy}
-              >
-                {home.image && (
-                  <Image src={home.image} alt={home.title} height={55} style={{ marginLeft: '1rem' }} />
-                )}
+            <Link href={home.path} passHref legacyBehavior>
+              <a id={home.title + '-link'} className="nav-link mx-2" aria-describedby={home.describedBy}>
+                {home.image && <Image src={home.image} alt={home.title} height={55} style={{ marginLeft: '1rem' }} />}
               </a>
             </Link>
           </Grid>
@@ -78,7 +73,7 @@ const Navbar: React.FC = () => {
                 Logout
               </Button>
             ) : (
-              <Link legacyBehavior href={login.path} passHref>
+              <Link href={login.path} passHref legacyBehavior>
                 <Button
                   color="inherit"
                   startIcon={<PersonIcon />}

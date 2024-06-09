@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers';
 import { Container, Typography } from '@mui/material';
+import Calcbar from 'app/components/Calcbar';
 
 interface UserData {
   id: string;
@@ -38,6 +39,7 @@ const Dashboard = () => {
     <div style={{ backgroundColor: "#fbf7ef" }}>
       <Typography variant="h4">
         Hello {firstName}, welcome to the Dashboard Page!
+        <Calcbar/>
       </Typography>
     </div>
   );

@@ -197,17 +197,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "(ssr)/./node_modules/@mui/material/AppBar/index.js":
-/*!****************************************************!*\
-  !*** ./node_modules/@mui/material/AppBar/index.js ***!
-  \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   appBarClasses: () => (/* reexport safe */ _appBarClasses__WEBPACK_IMPORTED_MODULE_1__[\"default\"]),\n/* harmony export */   \"default\": () => (/* reexport safe */ _AppBar__WEBPACK_IMPORTED_MODULE_0__[\"default\"]),\n/* harmony export */   getAppBarUtilityClass: () => (/* reexport safe */ _appBarClasses__WEBPACK_IMPORTED_MODULE_1__.getAppBarUtilityClass)\n/* harmony export */ });\n/* harmony import */ var _AppBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AppBar */ \"(ssr)/./node_modules/@mui/material/AppBar/AppBar.js\");\n/* harmony import */ var _appBarClasses__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./appBarClasses */ \"(ssr)/./node_modules/@mui/material/AppBar/appBarClasses.js\");\n/* __next_internal_client_entry_do_not_use__ default,appBarClasses,* auto */ \n\n\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvQG11aS9tYXRlcmlhbC9BcHBCYXIvaW5kZXguanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7NkVBRW1DO0FBQ3dCO0FBQzNCIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbWF0aF9hcHBfdjMvLi9ub2RlX21vZHVsZXMvQG11aS9tYXRlcmlhbC9BcHBCYXIvaW5kZXguanM/MTU3YyJdLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIGNsaWVudCc7XG5cbmV4cG9ydCB7IGRlZmF1bHQgfSBmcm9tICcuL0FwcEJhcic7XG5leHBvcnQgeyBkZWZhdWx0IGFzIGFwcEJhckNsYXNzZXMgfSBmcm9tICcuL2FwcEJhckNsYXNzZXMnO1xuZXhwb3J0ICogZnJvbSAnLi9hcHBCYXJDbGFzc2VzJzsiXSwibmFtZXMiOlsiZGVmYXVsdCIsImFwcEJhckNsYXNzZXMiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/@mui/material/AppBar/index.js\n");
-
-/***/ }),
-
 /***/ "(ssr)/./node_modules/@mui/material/Backdrop/Backdrop.js":
 /*!*********************************************************!*\
   !*** ./node_modules/@mui/material/Backdrop/Backdrop.js ***!
@@ -271,17 +260,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__),\n/* harmony export */   getButtonUtilityClass: () => (/* binding */ getButtonUtilityClass)\n/* harmony export */ });\n/* harmony import */ var _mui_utils_generateUtilityClasses__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/utils/generateUtilityClasses */ \"(ssr)/./node_modules/@mui/utils/generateUtilityClasses/generateUtilityClasses.js\");\n/* harmony import */ var _mui_utils_generateUtilityClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mui/utils/generateUtilityClass */ \"(ssr)/./node_modules/@mui/utils/generateUtilityClass/generateUtilityClass.js\");\n\n\nfunction getButtonUtilityClass(slot) {\n    return (0,_mui_utils_generateUtilityClass__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(\"MuiButton\", slot);\n}\nconst buttonClasses = (0,_mui_utils_generateUtilityClasses__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(\"MuiButton\", [\n    \"root\",\n    \"text\",\n    \"textInherit\",\n    \"textPrimary\",\n    \"textSecondary\",\n    \"textSuccess\",\n    \"textError\",\n    \"textInfo\",\n    \"textWarning\",\n    \"outlined\",\n    \"outlinedInherit\",\n    \"outlinedPrimary\",\n    \"outlinedSecondary\",\n    \"outlinedSuccess\",\n    \"outlinedError\",\n    \"outlinedInfo\",\n    \"outlinedWarning\",\n    \"contained\",\n    \"containedInherit\",\n    \"containedPrimary\",\n    \"containedSecondary\",\n    \"containedSuccess\",\n    \"containedError\",\n    \"containedInfo\",\n    \"containedWarning\",\n    \"disableElevation\",\n    \"focusVisible\",\n    \"disabled\",\n    \"colorInherit\",\n    \"colorPrimary\",\n    \"colorSecondary\",\n    \"colorSuccess\",\n    \"colorError\",\n    \"colorInfo\",\n    \"colorWarning\",\n    \"textSizeSmall\",\n    \"textSizeMedium\",\n    \"textSizeLarge\",\n    \"outlinedSizeSmall\",\n    \"outlinedSizeMedium\",\n    \"outlinedSizeLarge\",\n    \"containedSizeSmall\",\n    \"containedSizeMedium\",\n    \"containedSizeLarge\",\n    \"sizeMedium\",\n    \"sizeSmall\",\n    \"sizeLarge\",\n    \"fullWidth\",\n    \"startIcon\",\n    \"endIcon\",\n    \"icon\",\n    \"iconSizeSmall\",\n    \"iconSizeMedium\",\n    \"iconSizeLarge\"\n]);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (buttonClasses);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvQG11aS9tYXRlcmlhbC9CdXR0b24vYnV0dG9uQ2xhc3Nlcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQXVFO0FBQ0o7QUFDNUQsU0FBU0Usc0JBQXNCQyxJQUFJO0lBQ3hDLE9BQU9GLDJFQUFvQkEsQ0FBQyxhQUFhRTtBQUMzQztBQUNBLE1BQU1DLGdCQUFnQkosNkVBQXNCQSxDQUFDLGFBQWE7SUFBQztJQUFRO0lBQVE7SUFBZTtJQUFlO0lBQWlCO0lBQWU7SUFBYTtJQUFZO0lBQWU7SUFBWTtJQUFtQjtJQUFtQjtJQUFxQjtJQUFtQjtJQUFpQjtJQUFnQjtJQUFtQjtJQUFhO0lBQW9CO0lBQW9CO0lBQXNCO0lBQW9CO0lBQWtCO0lBQWlCO0lBQW9CO0lBQW9CO0lBQWdCO0lBQVk7SUFBZ0I7SUFBZ0I7SUFBa0I7SUFBZ0I7SUFBYztJQUFhO0lBQWdCO0lBQWlCO0lBQWtCO0lBQWlCO0lBQXFCO0lBQXNCO0lBQXFCO0lBQXNCO0lBQXVCO0lBQXNCO0lBQWM7SUFBYTtJQUFhO0lBQWE7SUFBYTtJQUFXO0lBQVE7SUFBaUI7SUFBa0I7Q0FBZ0I7QUFDajdCLGlFQUFlSSxhQUFhQSxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbWF0aF9hcHBfdjMvLi9ub2RlX21vZHVsZXMvQG11aS9tYXRlcmlhbC9CdXR0b24vYnV0dG9uQ2xhc3Nlcy5qcz85MjczIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBnZW5lcmF0ZVV0aWxpdHlDbGFzc2VzIGZyb20gJ0BtdWkvdXRpbHMvZ2VuZXJhdGVVdGlsaXR5Q2xhc3Nlcyc7XG5pbXBvcnQgZ2VuZXJhdGVVdGlsaXR5Q2xhc3MgZnJvbSAnQG11aS91dGlscy9nZW5lcmF0ZVV0aWxpdHlDbGFzcyc7XG5leHBvcnQgZnVuY3Rpb24gZ2V0QnV0dG9uVXRpbGl0eUNsYXNzKHNsb3QpIHtcbiAgcmV0dXJuIGdlbmVyYXRlVXRpbGl0eUNsYXNzKCdNdWlCdXR0b24nLCBzbG90KTtcbn1cbmNvbnN0IGJ1dHRvbkNsYXNzZXMgPSBnZW5lcmF0ZVV0aWxpdHlDbGFzc2VzKCdNdWlCdXR0b24nLCBbJ3Jvb3QnLCAndGV4dCcsICd0ZXh0SW5oZXJpdCcsICd0ZXh0UHJpbWFyeScsICd0ZXh0U2Vjb25kYXJ5JywgJ3RleHRTdWNjZXNzJywgJ3RleHRFcnJvcicsICd0ZXh0SW5mbycsICd0ZXh0V2FybmluZycsICdvdXRsaW5lZCcsICdvdXRsaW5lZEluaGVyaXQnLCAnb3V0bGluZWRQcmltYXJ5JywgJ291dGxpbmVkU2Vjb25kYXJ5JywgJ291dGxpbmVkU3VjY2VzcycsICdvdXRsaW5lZEVycm9yJywgJ291dGxpbmVkSW5mbycsICdvdXRsaW5lZFdhcm5pbmcnLCAnY29udGFpbmVkJywgJ2NvbnRhaW5lZEluaGVyaXQnLCAnY29udGFpbmVkUHJpbWFyeScsICdjb250YWluZWRTZWNvbmRhcnknLCAnY29udGFpbmVkU3VjY2VzcycsICdjb250YWluZWRFcnJvcicsICdjb250YWluZWRJbmZvJywgJ2NvbnRhaW5lZFdhcm5pbmcnLCAnZGlzYWJsZUVsZXZhdGlvbicsICdmb2N1c1Zpc2libGUnLCAnZGlzYWJsZWQnLCAnY29sb3JJbmhlcml0JywgJ2NvbG9yUHJpbWFyeScsICdjb2xvclNlY29uZGFyeScsICdjb2xvclN1Y2Nlc3MnLCAnY29sb3JFcnJvcicsICdjb2xvckluZm8nLCAnY29sb3JXYXJuaW5nJywgJ3RleHRTaXplU21hbGwnLCAndGV4dFNpemVNZWRpdW0nLCAndGV4dFNpemVMYXJnZScsICdvdXRsaW5lZFNpemVTbWFsbCcsICdvdXRsaW5lZFNpemVNZWRpdW0nLCAnb3V0bGluZWRTaXplTGFyZ2UnLCAnY29udGFpbmVkU2l6ZVNtYWxsJywgJ2NvbnRhaW5lZFNpemVNZWRpdW0nLCAnY29udGFpbmVkU2l6ZUxhcmdlJywgJ3NpemVNZWRpdW0nLCAnc2l6ZVNtYWxsJywgJ3NpemVMYXJnZScsICdmdWxsV2lkdGgnLCAnc3RhcnRJY29uJywgJ2VuZEljb24nLCAnaWNvbicsICdpY29uU2l6ZVNtYWxsJywgJ2ljb25TaXplTWVkaXVtJywgJ2ljb25TaXplTGFyZ2UnXSk7XG5leHBvcnQgZGVmYXVsdCBidXR0b25DbGFzc2VzOyJdLCJuYW1lcyI6WyJnZW5lcmF0ZVV0aWxpdHlDbGFzc2VzIiwiZ2VuZXJhdGVVdGlsaXR5Q2xhc3MiLCJnZXRCdXR0b25VdGlsaXR5Q2xhc3MiLCJzbG90IiwiYnV0dG9uQ2xhc3NlcyJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/@mui/material/Button/buttonClasses.js\n");
-
-/***/ }),
-
-/***/ "(ssr)/./node_modules/@mui/material/Button/index.js":
-/*!****************************************************!*\
-  !*** ./node_modules/@mui/material/Button/index.js ***!
-  \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   buttonClasses: () => (/* reexport safe */ _buttonClasses__WEBPACK_IMPORTED_MODULE_1__[\"default\"]),\n/* harmony export */   \"default\": () => (/* reexport safe */ _Button__WEBPACK_IMPORTED_MODULE_0__[\"default\"]),\n/* harmony export */   getButtonUtilityClass: () => (/* reexport safe */ _buttonClasses__WEBPACK_IMPORTED_MODULE_1__.getButtonUtilityClass)\n/* harmony export */ });\n/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Button */ \"(ssr)/./node_modules/@mui/material/Button/Button.js\");\n/* harmony import */ var _buttonClasses__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./buttonClasses */ \"(ssr)/./node_modules/@mui/material/Button/buttonClasses.js\");\n/* __next_internal_client_entry_do_not_use__ default,buttonClasses,* auto */ \n\n\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvQG11aS9tYXRlcmlhbC9CdXR0b24vaW5kZXguanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7NkVBRW1DO0FBQ3dCO0FBQzNCIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbWF0aF9hcHBfdjMvLi9ub2RlX21vZHVsZXMvQG11aS9tYXRlcmlhbC9CdXR0b24vaW5kZXguanM/MjBkZCJdLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIGNsaWVudCc7XG5cbmV4cG9ydCB7IGRlZmF1bHQgfSBmcm9tICcuL0J1dHRvbic7XG5leHBvcnQgeyBkZWZhdWx0IGFzIGJ1dHRvbkNsYXNzZXMgfSBmcm9tICcuL2J1dHRvbkNsYXNzZXMnO1xuZXhwb3J0ICogZnJvbSAnLi9idXR0b25DbGFzc2VzJzsiXSwibmFtZXMiOlsiZGVmYXVsdCIsImJ1dHRvbkNsYXNzZXMiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/@mui/material/Button/index.js\n");
 
 /***/ }),
 
@@ -2687,44 +2665,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "(rsc)/./node_modules/@mui/icons-material/Person.js":
-/*!****************************************************!*\
-  !*** ./node_modules/@mui/icons-material/Person.js ***!
-  \****************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-/* __next_internal_client_entry_do_not_use__  cjs */ 
-const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("/Users/bduran04/Desktop/Projects/math_app_v3/node_modules/@mui/icons-material/Person.js");
-
-
-/***/ }),
-
-/***/ "(rsc)/./node_modules/@mui/material/AppBar/index.js":
-/*!****************************************************!*\
-  !*** ./node_modules/@mui/material/AppBar/index.js ***!
-  \****************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-/* __next_internal_client_entry_do_not_use__ default,appBarClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("/Users/bduran04/Desktop/Projects/math_app_v3/node_modules/@mui/material/AppBar/index.js");
-
-
-/***/ }),
-
-/***/ "(rsc)/./node_modules/@mui/material/Button/index.js":
-/*!****************************************************!*\
-  !*** ./node_modules/@mui/material/Button/index.js ***!
-  \****************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-/* __next_internal_client_entry_do_not_use__ default,buttonClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("/Users/bduran04/Desktop/Projects/math_app_v3/node_modules/@mui/material/Button/index.js");
-
-
-/***/ }),
-
 /***/ "(rsc)/./node_modules/@mui/material/Container/index.js":
 /*!*******************************************************!*\
   !*** ./node_modules/@mui/material/Container/index.js ***!
@@ -2745,35 +2685,6 @@ module.exports = createProxy("/Users/bduran04/Desktop/Projects/math_app_v3/node_
 
 /* __next_internal_client_entry_do_not_use__ default,gridClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
 module.exports = createProxy("/Users/bduran04/Desktop/Projects/math_app_v3/node_modules/@mui/material/Grid/index.js");
-
-
-/***/ }),
-
-/***/ "(rsc)/./node_modules/@mui/material/Toolbar/Toolbar.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/@mui/material/Toolbar/Toolbar.js ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   $$typeof: () => (/* binding */ $$typeof),
-/* harmony export */   __esModule: () => (/* binding */ __esModule),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-
-const proxy = (0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`/Users/bduran04/Desktop/Projects/math_app_v3/node_modules/@mui/material/Toolbar/Toolbar.js`)
-
-// Accessing the __esModule property and exporting $$typeof are required here.
-// The __esModule getter forces the proxy target to create the default export
-// and the $$typeof value is for rendering logic to determine if the module
-// is a client boundary.
-const { __esModule, $$typeof } = proxy;
-const __default__ = proxy.default;
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`/Users/bduran04/Desktop/Projects/math_app_v3/node_modules/@mui/material/Toolbar/Toolbar.js#default`));
 
 
 /***/ }),
