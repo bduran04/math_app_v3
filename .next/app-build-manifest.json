@@ -16,6 +16,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/login/page.js"
     ],
+    "/error/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/error/page.js"
+    ],
     "/dashboard/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

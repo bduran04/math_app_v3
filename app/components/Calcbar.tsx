@@ -1,48 +1,68 @@
-'use client';
-
-import React, { useState } from 'react';
-import { Box, Button, TextField, Typography } from '@mui/material';
-import * as mathsteps from 'mathsteps';
+"use client";
+import React, { useState } from "react";
+import { Box, Button, Grid, TextField, Typography, Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import mathsteps from "mathsteps";
 
 const Calcbar: React.FC = () => {
-  const [equation, setEquation] = useState('');
-  const [solution, setSolution] = useState<string | null>(null);
+  const [input, setInput] = useState<string>("");
+  const [solution, setSolution] = useState<string>("");
+  const [steps, setSteps] = useState<any[]>([]);
 
   const handleSolve = () => {
     try {
-      const steps = mathsteps.solveEquation(equation);
-      if (steps.length > 0) {
-        const lastStep = steps[steps.length - 1];
-        setSolution(lastStep.newEquation.asAscii());
-      } else {
-        setSolution('No solution found.');
-      }
+      const steps = mathsteps.solveEquation(input);
+      const solutionSteps = steps.map((step: any) => step.newEquation.ascii());
+      setSolution(solutionSteps.length ? solutionSteps[solutionSteps.length - 1] : "No solution found");
+      setSteps(steps);
     } catch (error) {
-      setSolution('Invalid equation. Please enter a valid algebraic equation.');
+      setSolution("Invalid equation");
+      setSteps([]);
     }
   };
 
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" p={2}>
-      <Typography variant="h4" gutterBottom>
-        Algebraic Equation Solver
-      </Typography>
-      <TextField
-        label="Enter Equation"
-        variant="outlined"
-        value={equation}
-        onChange={(e) => setEquation(e.target.value)}
-        fullWidth
-        margin="normal"
-      />
-      <Button variant="contained" color="primary" onClick={handleSolve}>
-        Solve
-      </Button>
-      {solution && (
-        <Typography variant="h6" color="textSecondary" style={{ marginTop: '20px' }}>
-          Solution: {solution}
-        </Typography>
-      )}
+    <Box sx={{ padding: 2 }}>
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <TextField
+            label="Enter an algebraic equation"
+            variant="outlined"
+            fullWidth
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            sx={{ mt: 1 }}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Button variant="contained" color="primary" onClick={handleSolve}>
+              Solve
+            </Button>
+          </Box>
+        </Grid>
+        <Grid item xs={12}>
+          <Box sx={{ border: '1px solid', borderColor: 'grey.400', borderRadius: 1, padding: 2, marginTop: 2, backgroundColor: '#FFFFFF' }}>
+            <Typography variant="h6">Solution: {solution}</Typography>
+            {steps.length > 0 && (
+              <Box sx={{ marginTop: 2 }}>
+                <Typography variant="h6">Steps for Solving Equation:</Typography>
+                {steps.map((step, index) => (
+                  <Accordion key={index} sx={{ marginTop: 2 }}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                      <Typography>{`Step ${index + 1}`}</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>{step.newEquation.ascii()}</Typography>
+                      <Typography variant="body2">{`○ ${step.changeType.replace(/_/g, ' ').toLowerCase()}`}</Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                ))}
+              </Box>
+            )}
+          </Box>
+        </Grid>
+      </Grid>
     </Box>
   );
 };

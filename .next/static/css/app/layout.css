@@ -567,6 +567,9 @@ video {
 .justify-center {
   justify-content: center;
 }
+.border {
+  border-width: 1px;
+}
 .object-contain {
   object-fit: contain;
 }

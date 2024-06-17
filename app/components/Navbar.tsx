@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <AppBar position="static" style={{ backgroundColor: 'transparent' }}>
+    <AppBar position="static" style={{ backgroundColor: 'inherit'}}>
       <Toolbar style={{ minHeight: '48px', paddingLeft: '1rem', paddingRight: '1rem' }} disableGutters>
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>

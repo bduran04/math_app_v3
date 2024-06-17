@@ -1,5 +1,5 @@
 import { cookies } from 'next/headers';
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, Box } from '@mui/material';
 import Calcbar from 'app/components/Calcbar';
 
 interface UserData {
@@ -12,7 +12,7 @@ interface UserData {
 const getUserData = (): UserData | null => {
   const cookieStore = cookies();
   const userDataCookie = cookieStore.get('user-data');
-  
+
   if (userDataCookie) {
     return JSON.parse(userDataCookie.value);
   }
@@ -26,9 +26,7 @@ const Dashboard = () => {
   if (!userData) {
     return (
       <div style={{ backgroundColor: "#fbf7ef" }}>
-      <Container>
         <Typography variant="h4">User not found. Please log in.</Typography>
-      </Container>
       </div>
     );
   }
@@ -37,10 +35,14 @@ const Dashboard = () => {
 
   return (
     <div style={{ backgroundColor: "#fbf7ef" }}>
-      <Typography variant="h4">
-        Hello {firstName}, welcome to the Dashboard Page!
-        <Calcbar/>
-      </Typography>
+      <Container maxWidth="sm">
+        <Box sx={{ display: 'flex', justifyContent: 'flex-start', paddingTop: '1rem' }}>
+          <Typography variant="h4">
+            Hello {firstName}!
+          </Typography>
+        </Box>
+        <Calcbar />
+      </Container>
     </div>
   );
 };
