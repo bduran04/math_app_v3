@@ -7,6 +7,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../assets/math_solver_black.png';
 import PersonIcon from '@mui/icons-material/Person';
+import { createClient } from "../utils/supabase/server";
+import { cookies } from 'next/headers';
 
 interface NavLink {
   title: string;
@@ -29,29 +31,35 @@ const login: NavLink = {
 };
 
 const Navbar: React.FC = () => {
+  const supabase = createClient();
   const router = useRouter();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    const userData = document.cookie.split('; ').find(row => row.startsWith('user-data='));
-    setIsLoggedIn(!!userData);
+    const checkUser = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      setIsLoggedIn(!!session);
+
+      if (session) {
+        document.cookie = `user-data=${JSON.stringify(session.user)}; path=/`;
+      }
+    };
+    checkUser();
   }, []);
 
   const handleLogout = async () => {
-    const response = await fetch('/api/logout', {
-      method: 'POST',
-    });
-
-    if (response.ok) {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      console.error('Failed to logout', error);
+    } else {
+      cookies().delete('user-data');
       setIsLoggedIn(false);
       router.push('/');
-    } else {
-      console.error('Failed to logout');
     }
   };
 
   return (
-    <AppBar position="static" style={{ backgroundColor: 'inherit'}}>
+    <AppBar position="static" style={{ backgroundColor: 'inherit' }}>
       <Toolbar style={{ minHeight: '48px', paddingLeft: '1rem', paddingRight: '1rem' }} disableGutters>
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>

@@ -42,23 +42,27 @@ const Calcbar: React.FC = () => {
           </Box>
         </Grid>
         <Grid item xs={12}>
-          <Box sx={{ border: '1px solid', borderColor: 'grey.400', borderRadius: 1, padding: 2, marginTop: 2, backgroundColor: '#FFFFFF' }}>
+          <Box sx={{ border: '1px solid', borderColor: 'grey.400', borderRadius: 1, padding: 2, marginTop: 2, backgroundColor: '#f0f4f8' }}>
             <Typography variant="h6">Solution: {solution}</Typography>
             {steps.length > 0 && (
-              <Box sx={{ marginTop: 2 }}>
-                <Typography variant="h6">Steps for Solving Equation:</Typography>
-                {steps.map((step, index) => (
-                  <Accordion key={index} sx={{ marginTop: 2 }}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                      <Typography>{`Step ${index + 1}`}</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>{step.newEquation.ascii()}</Typography>
-                      <Typography variant="body2">{`○ ${step.changeType.replace(/_/g, ' ').toLowerCase()}`}</Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                ))}
-              </Box>
+              <Accordion sx={{ marginTop: 2, backgroundColor: 'primary.main' }}>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                  <Typography sx={{ color: '#2c2e33' }}>Steps</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  {steps.map((step, index) => (
+                    <Accordion key={index} sx={{ marginTop: 2, backgroundColor: '#fff' }}>
+                      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                        <Typography>{`Step ${index + 1}`}</Typography>
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        <Typography>{step.newEquation.ascii()}</Typography>
+                        <Typography variant="body2">{step.changeType.replace(/_/g, ' ').toLowerCase()}</Typography>
+                      </AccordionDetails>
+                    </Accordion>
+                  ))}
+                </AccordionDetails>
+              </Accordion>
             )}
           </Box>
         </Grid>
