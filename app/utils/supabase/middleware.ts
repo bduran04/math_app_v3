@@ -1,5 +1,5 @@
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
-import { NextResponse, type NextRequest } from 'next/server'
+import { createServerClient, type CookieOptions } from '@supabase/ssr';
+import { NextResponse, type NextRequest } from 'next/server';
 
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({
@@ -54,7 +54,6 @@ export async function updateSession(request: NextRequest) {
       email: data.user.email,
       fullName: data.user.user_metadata?.first_name || '',
       lastName: data.user.user_metadata?.last_name || '',
-      // Add other metadata fields as needed
     };
     response.cookies.set('user-data', JSON.stringify(userData), { httpOnly: true });
   }
