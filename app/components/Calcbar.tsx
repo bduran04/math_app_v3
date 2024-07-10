@@ -42,7 +42,7 @@ const Calcbar: React.FC = () => {
           </Box>
         </Grid>
         <Grid item xs={12}>
-          <Box sx={{ border: '1px solid', borderColor: 'grey.400', borderRadius: 1, padding: 2, marginTop: 2, backgroundColor: '#f0f4f8' }}>
+          <Box sx={{ border: '1px solid', borderColor: 'grey.400', borderRadius: 1, padding: 2, marginTop: 2, backgroundColor: '#fbf7ef' }}>
             <Typography variant="h6">Solution: {solution}</Typography>
             {steps.length > 0 && (
               <Accordion sx={{ marginTop: 2, backgroundColor: 'primary.main' }}>

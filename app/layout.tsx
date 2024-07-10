@@ -32,11 +32,15 @@ const getUserData = (): UserData | null => {
 const MainLayout: React.FC<MainLayoutProps> = ({ children, initialUserData }) => {
   return (
     <html lang="en">
-      <body>
+      <body style={{ backgroundColor: '#fbf7ef', margin: 0, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <ThemeProvider theme={theme}>
-          <ServerNavbar />
-          {children}
-          <Footer />
+          <div style={{ flex: 1 }}>
+            <ServerNavbar />
+            <main style={{ flex: 1 }}>
+              {children}
+            </main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
