@@ -26,7 +26,8 @@
     "nookies": "^2.5.2",
     "react": "^18",
     "react-dom": "^18",
-    "styled-components": "^6.1.9"
+    "styled-components": "^6.1.9",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.6",
