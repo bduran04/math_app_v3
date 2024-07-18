@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers';
 import { Container, Typography, Box } from '@mui/material';
-import Calcbar from 'app/components/Calcbar';
+import ExampleEquations from 'app/components/ExampleEquations';
 
 interface UserData {
   id: string;
@@ -41,7 +41,7 @@ const Dashboard = () => {
             Hello {firstName}!
           </Typography>
         </Box>
-        <Calcbar />
+        <ExampleEquations />
       </Container>
     </div>
   );

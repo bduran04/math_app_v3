@@ -1,17 +1,28 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Button, Grid, TextField, Typography, Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import mathsteps from "mathsteps";
 
-const Calcbar: React.FC = () => {
-  const [input, setInput] = useState<string>("");
+interface CalcbarProps {
+  exampleInput?: string;
+}
+
+const Calcbar: React.FC<CalcbarProps> = ({ exampleInput }) => {
+  const [input, setInput] = useState<string>(exampleInput || "");
   const [solution, setSolution] = useState<string>("");
   const [steps, setSteps] = useState<any[]>([]);
 
-  const handleSolve = () => {
+  useEffect(() => {
+    if (exampleInput) {
+      setInput(exampleInput);
+      handleSolve(exampleInput);
+    }
+  }, [exampleInput]);
+
+  const handleSolve = (inputValue: string) => {
     try {
-      const steps = mathsteps.solveEquation(input);
+      const steps = mathsteps.solveEquation(inputValue);
       const solutionSteps = steps.map((step: any) => step.newEquation.ascii());
       setSolution(solutionSteps.length ? solutionSteps[solutionSteps.length - 1] : "No solution found");
       setSteps(steps);
@@ -36,7 +47,7 @@ const Calcbar: React.FC = () => {
         </Grid>
         <Grid item xs={12}>
           <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <Button variant="contained" color="primary" onClick={handleSolve}>
+            <Button variant="contained" color="primary" onClick={() => handleSolve(input)}>
               Solve
             </Button>
           </Box>
