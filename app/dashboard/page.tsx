@@ -35,13 +35,17 @@ const Dashboard = () => {
 
   return (
     <div style={{ backgroundColor: "#fbf7ef" }}>
-      <Container maxWidth="sm">
-        <Box sx={{ display: 'flex', justifyContent: 'flex-start', paddingTop: '1rem' }}>
-          <Typography variant="h4">
-            Hello {firstName}!
-          </Typography>
+      <Container maxWidth="lg">
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '1rem' }}>
+          <Box sx={{ marginBottom: '2rem' }}>
+            <Typography variant="h4">
+              Hello {firstName}!
+            </Typography>
+          </Box>
+          <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+            <ExampleEquations />
+          </Box>
         </Box>
-        <ExampleEquations />
       </Container>
     </div>
   );
