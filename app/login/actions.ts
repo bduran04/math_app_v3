@@ -1,15 +1,13 @@
 'use server'
 
-import { revalidatePath } from 'next/cache'
-import { redirect } from 'next/navigation'
-
-import { createClient } from '../utils/supabase/server'
+import { headers } from "next/headers";
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
+import { createClient } from '../utils/supabase/server';
 
 export async function login(formData: FormData) {
-  const supabase = createClient()
+  const supabase = createClient();
 
-  // Type-casting here for convenience
-  // In practice, you should validate your inputs
   const data = {
     email: formData.get('email') as string,
     password: formData.get('password') as string,
@@ -26,10 +24,9 @@ export async function login(formData: FormData) {
 }
 
 export async function signup(formData: FormData) {
-  const supabase = createClient()
+  const supabase = createClient();
+  const origin = headers().get("origin");
 
-  // Type-casting here for convenience
-  // In practice, you should validate your inputs
   const data = {
     email: formData.get('email') as string,
     password: formData.get('password') as string,
@@ -42,6 +39,7 @@ export async function signup(formData: FormData) {
     email: data.email,
     password: data.password,
     options: {
+      emailRedirectTo: `${origin}/auth/callback`,
       data: {
         first_name: data.first_name,
         last_name: data.last_name

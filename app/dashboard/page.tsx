@@ -43,7 +43,7 @@ const Dashboard = () => {
             </Typography>
           </Box>
           <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-            <ExampleEquations />
+            <ExampleEquations userId={userData.id}/>
           </Box>
         </Box>
       </Container>

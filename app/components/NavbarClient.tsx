@@ -71,7 +71,6 @@ const NavbarClient: React.FC<NavbarClientProps> = ({ initialUserData }) => {
                 color="inherit"
                 startIcon={<PersonIcon />}
                 className="text-black"
-                style={{ color: '#2c2e33' }}
                 onClick={handleLogout}
               >
                 Logout
