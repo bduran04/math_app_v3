@@ -3,12 +3,14 @@ import React, { useState, useEffect } from "react";
 import { Box, Button, Grid, TextField, Typography, Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import mathsteps from "mathsteps";
+import AddButton from "./AddButton";
 
 interface CalcbarProps {
   exampleInput?: string;
+  userId: string;
 }
 
-const Calcbar: React.FC<CalcbarProps> = ({ exampleInput }) => {
+const Calcbar: React.FC<CalcbarProps> = ({ exampleInput, userId }) => {
   const [input, setInput] = useState<string>(exampleInput || "");
   const [solution, setSolution] = useState<string>("");
   const [steps, setSteps] = useState<any[]>([]);
@@ -74,6 +76,11 @@ const Calcbar: React.FC<CalcbarProps> = ({ exampleInput }) => {
                   ))}
                 </AccordionDetails>
               </Accordion>
+            )}
+            {solution && (
+              <Box mt={2} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <AddButton userId={userId} equation={input} solution={solution} steps={steps} />
+              </Box>
             )}
           </Box>
         </Grid>
