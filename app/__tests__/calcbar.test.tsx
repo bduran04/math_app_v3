@@ -12,7 +12,7 @@ describe('Calcbar', () => {
   });
 
   it('renders the Calcbar component', () => {
-    render(<Calcbar />);
+    render(<Calcbar userId={''} />);
     expect(screen.getByLabelText(/Enter an algebraic equation/i)).toBeInTheDocument();
     expect(screen.getByText(/Solve/i)).toBeInTheDocument();
   });
@@ -23,7 +23,7 @@ describe('Calcbar', () => {
     ];
     (mathsteps.solveEquation as jest.Mock).mockReturnValue(stepsMock);
 
-    render(<Calcbar />);
+    render(<Calcbar userId={''} />);
 
     fireEvent.change(screen.getByLabelText(/Enter an algebraic equation/i), { target: { value: 'x + 1 = 2' } });
     fireEvent.click(screen.getByText(/Solve/i));
@@ -34,7 +34,7 @@ describe('Calcbar', () => {
   it('displays "Invalid equation" when an invalid equation is entered', () => {
     (mathsteps.solveEquation as jest.Mock).mockImplementation(() => { throw new Error('Invalid equation'); });
 
-    render(<Calcbar />);
+    render(<Calcbar userId={''} />);
 
     fireEvent.change(screen.getByLabelText(/Enter an algebraic equation/i), { target: { value: 'invalid equation' } });
     fireEvent.click(screen.getByText(/Solve/i));
@@ -49,7 +49,7 @@ describe('Calcbar', () => {
     ];
     (mathsteps.solveEquation as jest.Mock).mockReturnValue(stepsMock);
 
-    render(<Calcbar />);
+    render(<Calcbar userId={''} />);
 
     fireEvent.change(screen.getByLabelText(/Enter an algebraic equation/i), { target: { value: 'x + 1 = 2' } });
     fireEvent.click(screen.getByText(/Solve/i));

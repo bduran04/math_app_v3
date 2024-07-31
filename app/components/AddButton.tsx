@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { Button, Box, TextField, Typography, Modal, Select, MenuItem, FormControl, InputLabel } from "@mui/material";
-import { createClient } from '../utils/supabase/client'
+import { Button, Box, TextField, Typography, Modal, Select, MenuItem, FormControl, InputLabel, Tooltip, Snackbar, Alert, SelectChangeEvent } from "@mui/material";
+import AddIcon from '@mui/icons-material/Add';
+import { createClient } from '../utils/supabase/client';
 
 interface AddButtonProps {
   userId: string;
@@ -15,7 +16,10 @@ const AddButton: React.FC<AddButtonProps> = ({ userId, equation, solution, steps
   const [title, setTitle] = useState('');
   const [existingTitle, setExistingTitle] = useState('');
   const [studyGuides, setStudyGuides] = useState<string[]>([]);
-   const supabase = createClient();
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [snackbarSeverity, setSnackbarSeverity] = useState<'success' | 'error'>('success');
+  const supabase = createClient();
 
   const handleOpen = async () => {
     setOpen(true);
@@ -25,7 +29,8 @@ const AddButton: React.FC<AddButtonProps> = ({ userId, equation, solution, steps
       .eq('user_id', userId);
 
     if (data) {
-      setStudyGuides(data.map((item: any) => item.title));
+      const uniqueTitles = Array.from(new Set(data.map((item: any) => item.title)));
+      setStudyGuides(uniqueTitles);
     }
   };
 
@@ -34,7 +39,9 @@ const AddButton: React.FC<AddButtonProps> = ({ userId, equation, solution, steps
   const handleSave = async () => {
     const selectedTitle = title || existingTitle;
     if (!selectedTitle) {
-      alert('Please provide a title or select an existing one.');
+      setSnackbarMessage('Please provide a title or select an existing one.');
+      setSnackbarSeverity('error');
+      setSnackbarOpen(true);
       return;
     }
 
@@ -43,24 +50,42 @@ const AddButton: React.FC<AddButtonProps> = ({ userId, equation, solution, steps
       .insert([{ user_id: userId, title: selectedTitle, equation, solution, steps }]);
 
     if (error) {
-      console.error(error.message);
+      setSnackbarMessage(`Error: ${error.message}`);
+      setSnackbarSeverity('error');
     } else {
+      setSnackbarMessage('Saved successfully!');
+      setSnackbarSeverity('success');
       handleClose();
     }
+    setSnackbarOpen(true);
+  };
+
+  const handleSnackbarClose = () => {
+    setSnackbarOpen(false);
+  };
+
+  const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTitle(event.target.value);
+  };
+
+  const handleExistingTitleChange = (event: SelectChangeEvent<string>) => {
+    setExistingTitle(event.target.value);
   };
 
   return (
     <div>
-      <Button variant="contained" color="primary" onClick={handleOpen}>
-        Add to Study Guide
-      </Button>
+      <Tooltip title="Add to Study Guide">
+        <Button variant="contained" color="secondary" onClick={handleOpen}>
+          <AddIcon />
+        </Button>
+      </Tooltip>
       <Modal open={open} onClose={handleClose}>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, bgcolor: 'background.paper', p: 4, borderRadius: 1, mx: 'auto', mt: '10%', maxWidth: 400 }}>
           <Typography variant="h6">Add to Study Guide</Typography>
           <TextField
             label="New Title"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={handleTitleChange}
             fullWidth
           />
           <FormControl fullWidth>
@@ -68,7 +93,7 @@ const AddButton: React.FC<AddButtonProps> = ({ userId, equation, solution, steps
             <Select
               labelId="existing-title-label"
               value={existingTitle}
-              onChange={(e) => setExistingTitle(e.target.value)}
+              onChange={handleExistingTitleChange}
               fullWidth
             >
               {studyGuides.map((guide, index) => (
@@ -83,6 +108,11 @@ const AddButton: React.FC<AddButtonProps> = ({ userId, equation, solution, steps
           </Button>
         </Box>
       </Modal>
+      <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
+        <Alert onClose={handleSnackbarClose} severity={snackbarSeverity} sx={{ width: '100%' }}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </div>
   );
 };
