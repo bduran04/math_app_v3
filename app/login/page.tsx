@@ -1,12 +1,40 @@
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from "next/link";
 import MainLayout from '../layout';
 import { TextField, Button, Grid, Typography, Box, IconButton } from "@mui/material";
 import ArrowCircleLeftTwoToneIcon from '@mui/icons-material/ArrowCircleLeftTwoTone';
 import { login } from './actions';
+import { createClient } from '../utils/supabase/client';
+import { useRouter } from 'next/navigation';
+
+const supabase = createClient();
 
 const Login: React.FC = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Client-side listener setup for authentication state changes
+    const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
+      fetch('/api/authChange', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ event, session }),
+      });
+
+      // Optional: Redirect after login or logout based on the event
+      if (event === 'SIGNED_IN') {
+        router.push('/dashboard'); // Redirect to dashboard after login
+      } else if (event === 'SIGNED_OUT') {
+        router.push('/login'); // Redirect to login page after logout
+      }
+    });
+
+    // Cleanup on component unmount
+    return () => {
+      authListener.subscription.unsubscribe();
+    };
+  }, [router]);
 
   return (
     <div style={{ backgroundColor: "#fbf7ef" }}>
@@ -31,9 +59,7 @@ const Login: React.FC = () => {
           <Typography variant="h4" component="h2" gutterBottom>
             Sign in to your account
           </Typography>
-          <form
-            className="login-form"
-          >
+          <form className="login-form">
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -83,4 +109,3 @@ const Login: React.FC = () => {
 };
 
 export default Login;
-

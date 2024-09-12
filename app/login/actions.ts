@@ -5,7 +5,7 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { createClient } from '../utils/supabase/server';
 import { deleteCookie } from "../utils/supabase/cookies";
-import { NextApiResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function login(formData: FormData) {
   const supabase = createClient();
@@ -57,8 +57,9 @@ export async function signup(formData: FormData) {
   redirect('/dashboard')
 };
 
-export async function logout(context: { res: NextApiResponse }) {
-  const supabase = createClient()
+export async function logout(req: NextRequest): Promise<NextResponse> {
+  const supabase = createClient();
+  const response = NextResponse.redirect('/login');
 
   const { error } = await supabase.auth.signOut()
 
@@ -67,7 +68,7 @@ export async function logout(context: { res: NextApiResponse }) {
   }
 
   // Delete cookies if needed
-  deleteCookie(context.res, 'yourCookieName')
+  deleteCookie(response, 'user-data')
 
   revalidatePath('/', 'layout')
   redirect('/login') // Redirect to the login page or any other page after logout

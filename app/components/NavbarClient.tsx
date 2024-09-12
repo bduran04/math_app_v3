@@ -1,6 +1,6 @@
 'use client';
 
-import { startTransition, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { AppBar, Toolbar, Grid, Button, Box } from '@mui/material';
 import Link from 'next/link';
@@ -54,23 +54,10 @@ const NavbarClient: React.FC<NavbarClientProps> = ({ initialUserData }) => {
       await fetch('/api/logout', {
         method: 'POST',
       })
-      router.push('/login') // Redirect to the login page or any other page after logout
+      router.push('/') // Redirect to the login page or any other page after logout
       window.location.reload();
     // })
   }
-// // app/components/SuspenseWrapper.tsx
-// import React, { Suspense } from 'react'
-// import DataComponent from './DataComponent'
-
-// const SuspenseWrapper: React.FC = () => {
-//   return (
-//     <Suspense fallback={<div>Loading...</div>}>
-//       <DataComponent />
-//     </Suspense>
-//   )
-// }
-
-// export default SuspenseWrapper
 
   return (
     <AppBar position="static" style={{ backgroundColor: 'inherit' }}>
