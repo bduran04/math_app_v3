@@ -1,20 +1,19 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '../../utils/supabase/server'
-import { deleteCookie } from '../../utils/supabase/cookies'
+import { NextRequest, NextResponse } from 'next/server';
+import { createClient } from '../../utils/supabase/server';
+import { deleteCookie } from '../../utils/supabase/cookies';
 
+export async function POST(req: NextRequest): Promise<NextResponse> {
+  const supabase = createClient();
 
-export async function POST(req: NextRequest) {
-    const supabase = createClient();
+  const { error } = await supabase.auth.signOut();
 
-    const { error } = await supabase.auth.signOut()
+  if (error) {
+    console.error('Failed to logout', error);
+    return NextResponse.redirect(new URL('/error', req.url)); // Redirect to an error page if there's an error
+  }
 
-    if (error) {
-        return NextResponse.redirect(new URL('/error', req.url))
-    }
+  const response = NextResponse.redirect(new URL('/', req.url)); // Redirect to the home page
+  deleteCookie(response, 'user-data'); // Delete cookies if needed
 
-    const response = NextResponse.redirect(new URL('/login', req.url))
-    // Delete cookies if needed
-    deleteCookie(response, 'user-data')
-
-    return response
+  return response;
 }

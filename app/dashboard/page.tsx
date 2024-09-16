@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers';
-import { Container, Typography, Box } from '@mui/material';
-import ExampleEquations from 'app/components/ExampleEquations';
+import { redirect } from 'next/navigation';
+import DashboardClient from './DashboardClient';
 
 interface UserData {
   id: string;
@@ -14,41 +14,27 @@ const getUserData = (): UserData | null => {
   const userDataCookie = cookieStore.get('user-data');
 
   if (userDataCookie) {
-    return JSON.parse(userDataCookie.value);
+    try {
+      return JSON.parse(userDataCookie.value);
+    } catch (error) {
+      console.error('Failed to parse user data cookie', error);
+      return null;
+    }
   }
 
   return null;
 };
 
-const Dashboard = () => {
+const DashboardPage = () => {
   const userData = getUserData();
 
   if (!userData) {
-    return (
-      <div style={{ backgroundColor: "#fbf7ef" }}>
-        <Typography variant="h4">User not found. Please log in.</Typography>
-      </div>
-    );
+    redirect('/'); // Redirect to homepage if no user data is found
   }
 
-  const firstName = userData.fullName;
-
   return (
-    <div style={{ backgroundColor: "#fbf7ef" }}>
-      <Container maxWidth="lg">
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '1rem' }}>
-          <Box sx={{ marginBottom: '2rem' }}>
-            <Typography variant="h4">
-              Hello {firstName}!
-            </Typography>
-          </Box>
-          <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-            <ExampleEquations userId={userData.id} />
-          </Box>
-        </Box>
-      </Container>
-    </div>
+    <DashboardClient userData={userData!} />
   );
 };
 
-export default Dashboard;
+export default DashboardPage;

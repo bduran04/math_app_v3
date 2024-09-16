@@ -6,18 +6,19 @@ import { AppBar, Toolbar, Grid, Button, Box } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../assets/math_solver_black.png';
-import PersonIcon from '@mui/icons-material/Person';
+import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import { createClient } from '../utils/supabase/client';
 
-interface NavbarClientProps {
-  initialUserData: UserData | null;
-}
-
+// Define the types for the user data
 interface UserData {
   id: string;
   email: string;
   fullName: string;
   lastName: string;
+}
+
+interface NavbarClientProps {
+  initialUserData: UserData | null;
 }
 
 const home = {
@@ -33,6 +34,12 @@ const study_guide = {
   describedBy: 'study-guide-link',
 };
 
+const dashboard = {
+  title: 'Dashboard',
+  path: '/dashboard',
+  describedBy: 'dashboard-link',
+};
+
 const login = {
   title: 'Login',
   path: '/login',
@@ -41,23 +48,28 @@ const login = {
 
 const NavbarClient: React.FC<NavbarClientProps> = ({ initialUserData }) => {
   const router = useRouter();
-  const supabase = createClient();
-  const [isLoggedIn, setIsLoggedIn] = useState(!!initialUserData);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(!!initialUserData);
 
   useEffect(() => {
     setIsLoggedIn(!!initialUserData);
   }, [initialUserData]);
 
-  //need loading state. server component that creates a suspense boundary; look at next docs for suspense boundaries  
   const handleLogout = async () => {
-    // startTransition(async () => {
-      await fetch('/api/logout', {
+    try {
+      const response = await fetch('/api/logout', {
         method: 'POST',
-      })
-      router.push('/') // Redirect to the login page or any other page after logout
-      window.location.reload();
-    // })
-  }
+      });
+
+      if (response.ok) {
+        router.push('/'); // Redirect to the home page
+        window.location.reload(); // Reload to clear any client-side state
+      } else {
+        console.error('Logout failed');
+      }
+    } catch (error) {
+      console.error('Error during logout:', error);
+    }
+  };
 
   return (
     <AppBar position="static" style={{ backgroundColor: 'inherit' }}>
@@ -72,20 +84,27 @@ const NavbarClient: React.FC<NavbarClientProps> = ({ initialUserData }) => {
             </Link>
           </Grid>
 
-          {/* Right side: Study and Auth buttons */}
+          {/* Right side: Solve, Study, and Auth buttons */}
           <Grid item sx={{ flexGrow: 1 }}>
             <Box display="flex" justifyContent="flex-end" alignItems="center">
               {isLoggedIn && (
-                <Link href={study_guide.path} passHref legacyBehavior>
-                  <Button color="inherit" className="text-black" sx={{ marginRight: 2 }}>
-                    Study
-                  </Button>
-                </Link>
+                <>
+                  <Link href={dashboard.path} passHref legacyBehavior>
+                    <Button color="inherit" className="text-black" sx={{ marginRight: 2 }}>
+                      Solve
+                    </Button>
+                  </Link>
+                  <Link href={study_guide.path} passHref legacyBehavior>
+                    <Button color="inherit" className="text-black" sx={{ marginRight: 2 }}>
+                      Study
+                    </Button>
+                  </Link>
+                </>
               )}
               {isLoggedIn ? (
                 <Button
                   color="inherit"
-                  startIcon={<PersonIcon />}
+                  startIcon={<AccountCircleRoundedIcon />}
                   className="text-black"
                   onClick={handleLogout}
                 >
@@ -95,7 +114,7 @@ const NavbarClient: React.FC<NavbarClientProps> = ({ initialUserData }) => {
                 <Link href={login.path} passHref legacyBehavior>
                   <Button
                     color="inherit"
-                    startIcon={<PersonIcon />}
+                    startIcon={<AccountCircleRoundedIcon />}
                     className="text-black"
                     style={{ color: '#2c2e33' }}
                     id={login.title + '-link'}
