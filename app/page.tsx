@@ -16,14 +16,26 @@ const HomePage: React.FC = () => {
               Meet Math Solver
             </Typography>
             <Typography variant="h5" className="mt-2">
-            Your Personal Math Tutor - Anytime, Anywhere
+              Your Personal Math Tutor - Anytime, Anywhere
             </Typography>
           </Box>
         </Grid>
         {/* Right-hand side container for the image */}
         <Grid item xs={12} sm={6} md={6} lg={6} className="flex items-center justify-center">
-          <Box className="p-4 flex justify-center items-center">
-            <img src={calculator.src} alt="Calculator" className="max-w-md h-auto object-contain" />
+          <Box
+            sx={{
+              p: 4,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Box
+              component="img"
+              src={calculator.src}
+              alt="Calculator"
+              sx={{ maxWidth: '100%', height: 'auto', objectFit: 'contain' }}
+            />
           </Box>
         </Grid>
       </Grid>

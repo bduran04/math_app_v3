@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Box, Typography, List, ListItem, Button, CircularProgress } from "@mui/material";
 import { createClient } from "../utils/supabase/client"; // Adjust the path as needed
 import { useRouter } from 'next/navigation';
@@ -15,8 +15,8 @@ const StudyGuide: React.FC = () => {
   const supabase = createClient();
   const router = useRouter();
 
-  // Fetch study guide titles from Supabase
-  const fetchStudyGuides = async () => {
+  // Memoized fetchStudyGuides function to avoid re-creation on every render
+  const fetchStudyGuides = useCallback(async () => {
     const { data, error } = await supabase
       .from("study_guide")
       .select("id, title")
@@ -36,11 +36,11 @@ const StudyGuide: React.FC = () => {
     }
 
     setLoading(false);
-  };
+  }, [supabase]); // The supabase dependency ensures fetchStudyGuides is recreated only when supabase changes
 
   useEffect(() => {
     fetchStudyGuides();
-  }, []);
+  }, [fetchStudyGuides]); // Now safe to add fetchStudyGuides to dependency array
 
   // Handler for clicking on a study guide title
   const handleStudyGuideClick = (id: number) => {
@@ -75,4 +75,3 @@ const StudyGuide: React.FC = () => {
 };
 
 export default StudyGuide;
-

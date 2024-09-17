@@ -47,11 +47,11 @@ const Login: React.FC = () => {
         container
         justifyContent="center"
         alignItems="center"
-        sx={{ minHeight: "calc(100vh - 64px - 100px)", backgroundColor: '#fbf7ef', padding: 2 }}
+        sx={{ minHeight: "calc(100vh - 64px - 100px)", backgroundColor: "#fbf7ef", padding: 2 }}
         className="login"
       >
         <Box
-          sx={{ maxWidth: "400px", width: "100%", textAlign: 'center' }}
+          sx={{ maxWidth: "400px", width: "100%", textAlign: "center" }}
         >
           <Typography variant="h1" component="h1">
             Hello!
@@ -97,7 +97,7 @@ const Login: React.FC = () => {
             <Grid container direction="column" alignItems="center" sx={{ mb: 2 }}>
               <Grid item>
                 <Link legacyBehavior href="/register" passHref>
-                  <a style={{ color: "#2c2e33" }}>Don't have an account? Sign Up</a>
+                  <a style={{ color: "#2c2e33" }}>Don&apos;st have an account? Sign Up</a>
                 </Link>
               </Grid>
             </Grid>
