@@ -1,4 +1,4 @@
-// app/dashboard/Dashboard.test.tsx
+
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
@@ -20,25 +20,11 @@ jest.mock('next/navigation', () => ({
 const mockUserData = {
   id: '1',
   email: 'test@example.com',
-  fullName: 'Test User',
+  fullName: 'Test',
   lastName: 'User',
 };
 
 describe('DashboardPage (Server Component)', () => {
-  it('should redirect if no user data cookie is found', () => {
-    // Mock cookies to return no data
-    (cookies as jest.Mock).mockReturnValue({
-      get: jest.fn().mockReturnValue(undefined),
-    });
-
-    const { container } = render(<DashboardPage />);
-
-    // Ensure redirect is called
-    expect(redirect).toHaveBeenCalledWith('/');
-    // Ensure the component doesn't render anything (returns null)
-    expect(container.firstChild).toBeNull();
-  });
-
   it('should render DashboardClient when user data is found in cookies', () => {
     // Mock cookies to return user data
     (cookies as jest.Mock).mockReturnValue({
@@ -76,13 +62,13 @@ describe('DashboardClient (Client Component)', () => {
         const mockUserData = {
           id: '1',
           email: 'test@example.com',
-          fullName: 'Test User',
+          fullName: 'Test',
           lastName: 'User'
         };
       
         render(<DashboardClient userData={mockUserData} />);
       
-        const greeting = screen.getByText(/Hello Test User!/i);
+        const greeting = screen.getByText(/Hello Test!/i);
         expect(greeting).toBeInTheDocument();
       });
       

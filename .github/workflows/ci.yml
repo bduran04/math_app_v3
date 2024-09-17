@@ -14,26 +14,45 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x, 18.x]
+        node-version: [18.x]  # Updated to focus on Node 18.x
 
     steps:
+      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Cache node_modules and .next/cache to speed up builds
+      - name: Cache node modules and Next.js cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            .next/cache
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+
+      # Set up Node.js environment
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
+      # Install dependencies
       - name: Install dependencies
         run: npm install
 
+      # Run linter (for Next.js projects)
+      - name: Run linter
+        run: npm run lint  # Assuming you have a lint script in your package.json
+
+      # Run tests
       - name: Run tests
         run: npm run test
 
+      # Build the Next.js app
       - name: Build Next.js app
         run: npm run build
 
+      # Deploy to Vercel
       - name: Deploy to Vercel
         run: vercel --prod
         env:
