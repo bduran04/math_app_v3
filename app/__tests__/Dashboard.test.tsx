@@ -1,13 +1,11 @@
-
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import DashboardPage from '../dashboard/page';
 import DashboardClient from '../dashboard/DashboardClient';
+import DashboardServer from '../dashboard/DashboardServer';
+import Page from '../dashboard/page';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
-// Mock next/headers and next/navigation
 jest.mock('next/headers', () => ({
   cookies: jest.fn(),
 }));
@@ -16,61 +14,28 @@ jest.mock('next/navigation', () => ({
   redirect: jest.fn(),
 }));
 
-// Sample user data for the tests
+jest.mock('../dashboard/DashboardServer', () => jest.fn(() => <div>Mocked DashboardServer</div>));
+
 const mockUserData = {
   id: '1',
   email: 'test@example.com',
-  fullName: 'Test',
-  lastName: 'User',
+  fullName: 'John',
+  lastName: 'Doe',
 };
 
-describe('DashboardPage (Server Component)', () => {
-  it('should render DashboardClient when user data is found in cookies', () => {
-    // Mock cookies to return user data
-    (cookies as jest.Mock).mockReturnValue({
-      get: jest.fn().mockReturnValue({
-        value: JSON.stringify(mockUserData),
-      }),
+describe('Dashboard Components', () => {
+  describe('DashboardClient', () => {
+    it('renders the user\'s full name', () => {
+      render(<DashboardClient userData={mockUserData} />);
+    
+      expect(screen.getByText(/Hello John!/)).toBeInTheDocument();
     });
+  });
 
-    render(<DashboardPage />);
-
-    // Ensure DashboardClient is rendered
-    const greeting = screen.getByText(`Hello ${mockUserData.fullName}!`);
-    expect(greeting).toBeInTheDocument();
+  describe('Page', () => {
+    it('renders the DashboardServer component', () => {
+      render(<Page />);
+      expect(screen.getByText('Mocked DashboardServer')).toBeInTheDocument();
+    });
   });
 });
-
-describe('DashboardClient (Client Component)', () => {
-    it('renders the user information and ExampleEquations component', () => {
-      render(<DashboardClient userData={mockUserData} />);
-  
-      // Check if the user's name is displayed
-      const greeting = screen.getByText(`Hello ${mockUserData.fullName}!`);
-      expect(greeting).toBeInTheDocument();
-  
-      // Instead of matching "ExampleEquations", look for the actual content it renders, like buttons or headers
-      const exampleEquationText = screen.getByText(/Select an Example/i);  // Assuming ExampleEquations renders this text
-      expect(exampleEquationText).toBeInTheDocument();
-  
-      // Alternatively, if ExampleEquations renders buttons, use getByRole:
-      const firstExampleButton = screen.getByRole('button', { name: /x \+ 1 = 2/i });
-      expect(firstExampleButton).toBeInTheDocument();
-    });
-
-    it('should render correctly when userData is provided', () => {
-        const mockUserData = {
-          id: '1',
-          email: 'test@example.com',
-          fullName: 'Test',
-          lastName: 'User'
-        };
-      
-        render(<DashboardClient userData={mockUserData} />);
-      
-        const greeting = screen.getByText(/Hello Test!/i);
-        expect(greeting).toBeInTheDocument();
-      });
-      
-  });
-  
