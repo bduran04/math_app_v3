@@ -12,7 +12,7 @@
 7. [Questions](#questions)
 
 ## [Description](#description)
-Math Solver is a powerful, user-friendly application designed to assist students in solving algebraic equations. By leveraging modern web technologies, the app provides step-by-step solutions to algebraic problems, helping users understand the process and improve their math skills. Users can log in to create personalized study guides and manage their algebra learning journey efficiently.
+Math Solver is a powerful, user-friendly application designed to assist students in solving algebraic equations. By leveraging modern web technologies, the app provides step-by-step solutions to algebraic problems, helping users understand the process and improve their math skills. Users can log in to create personalized study guides and manage their algebra learning journey efficiently. Test Test 
 
 Deployed App: https://mathappv3-45da16t8s-bduran04s-projects.vercel.app/ 
 
