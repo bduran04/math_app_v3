@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { AppBar, Toolbar, Grid, Button, Box } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -48,6 +48,7 @@ const login = {
 
 const NavbarClient: React.FC<NavbarClientProps> = ({ initialUserData }) => {
   const router = useRouter();
+  const pathname = usePathname();
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(!!initialUserData);
 
   useEffect(() => {
@@ -70,6 +71,14 @@ const NavbarClient: React.FC<NavbarClientProps> = ({ initialUserData }) => {
       console.error('Error during logout:', error);
     }
   };
+
+  // Check if we're on the index/home page
+  const isHomePage = pathname === '/';
+  
+  // If we're on the home page, don't render the navbar
+  if (isHomePage) {
+    return null;
+  }
 
   return (
     <AppBar position="static" style={{ backgroundColor: 'inherit' }}>

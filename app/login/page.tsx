@@ -97,7 +97,7 @@ const Login: React.FC = () => {
             <Grid container direction="column" alignItems="center" sx={{ mb: 2 }}>
               <Grid item>
                 <Link legacyBehavior href="/register" passHref>
-                  <a style={{ color: "#2c2e33" }}>Don&apos;st have an account? Sign Up</a>
+                  <a style={{ color: "#2c2e33" }}>Don&apos;t have an account? Sign Up</a>
                 </Link>
               </Grid>
             </Grid>
