@@ -35,6 +35,8 @@ interface Equations {
 
 // Helper function to format change type to be more readable
 const formatChangeType = (changeType: string): string => {
+  if (!changeType) return '';
+  
   return changeType
     .split('_')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
@@ -64,7 +66,7 @@ const formatEquationPart = (part: any): string => {
     
     if (part.args) {
       const formattedArgs = part.args.map((arg: any) => {
-        if (arg.content) {
+        if (arg && arg.content) {
           return `(${formatEquationPart(arg.content)})`;
         }
         return formatEquationPart(arg);
@@ -83,7 +85,11 @@ const formatEquationPart = (part: any): string => {
   }
   
   // Fallback if we can't parse it
-  return JSON.stringify(part);
+  try {
+    return JSON.stringify(part);
+  } catch (e) {
+    return '';
+  }
 };
 
 // Check if a value is a complex step object
@@ -99,6 +105,9 @@ const isStepObject = (step: any): boolean => {
 
 // Render appropriate equation steps
 const renderSteps = (steps: any) => {
+  // Safely handle undefined or null steps
+  if (!steps) return null;
+  
   // If steps is an array of strings (old format)
   if (Array.isArray(steps) && steps.length > 0 && typeof steps[0] === 'string') {
     return (
@@ -146,11 +155,15 @@ const renderSteps = (steps: any) => {
   }
   
   // Fallback for any other format
-  return (
-    <Typography variant="body2">
-      Steps: {JSON.stringify(steps)}
-    </Typography>
-  );
+  try {
+    return (
+      <Typography variant="body2">
+        Steps: {JSON.stringify(steps)}
+      </Typography>
+    );
+  } catch (e) {
+    return null;
+  }
 };
 
 // Modal style
@@ -230,7 +243,7 @@ const Equations = ({ params }: { params: { equations: string } }) => {
         return;
       }
       
-      if (guideData) {
+      if (guideData && guideData.title) {
         setStudyGuideTitle(guideData.title);
         
         // Then get all equations with the same title (belonging to this study guide)
@@ -332,7 +345,7 @@ const Equations = ({ params }: { params: { equations: string } }) => {
                     Equation
                   </Typography>
                   <Typography variant="body1" sx={{ mb: 2, fontFamily: 'monospace', fontSize: '1.1rem' }}>
-                    {problem.equation}
+                    {problem.equation || "No equation provided"}
                   </Typography>
                   
                   <Divider sx={{ my: 2 }} />
@@ -341,7 +354,7 @@ const Equations = ({ params }: { params: { equations: string } }) => {
                     Solution
                   </Typography>
                   <Typography variant="body1" sx={{ fontFamily: 'monospace', fontSize: '1.1rem' }}>
-                    {problem.solution}
+                    {problem.solution || "No solution provided"}
                   </Typography>
                   
                   <Typography 
@@ -403,12 +416,12 @@ const Equations = ({ params }: { params: { equations: string } }) => {
           
           <Typography variant="h6" color={colors.text}>Original Equation</Typography>
           <Typography variant="body1" sx={{ mb: 2, fontFamily: 'monospace', fontSize: '1.1rem' }}>
-            {selectedProblem?.equation}
+            {selectedProblem?.equation || "No equation provided"}
           </Typography>
           
           <Typography variant="h6" color={colors.text}>Solution</Typography>
           <Typography variant="body1" sx={{ mb: 3, fontFamily: 'monospace', fontSize: '1.1rem' }}>
-            {selectedProblem?.solution}
+            {selectedProblem?.solution || "No solution provided"}
           </Typography>
           
           <Typography variant="h6" gutterBottom color={colors.text}>Solution Steps:</Typography>

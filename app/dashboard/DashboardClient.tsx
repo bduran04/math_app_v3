@@ -20,7 +20,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CalculateIcon from '@mui/icons-material/Calculate';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import HistoryIcon from '@mui/icons-material/History';
-import { createClient } from 'app/utils/supabase/client'; // Adjust path if needed
+import { createClient } from 'app/utils/supabase/client';
 
 interface UserData {
   id: string;
@@ -33,12 +33,11 @@ interface DashboardClientProps {
   userData: UserData;
 }
 
-interface StudyGuideTitle {
-  title: string;
-}
-
 const DashboardClient: React.FC<DashboardClientProps> = ({ userData }) => {
-  const firstName = userData.fullName;
+  // Add a safety check for userData and provide default values
+  const firstName = userData?.fullName || 'User';
+  const userId = userData?.id || '';
+  
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [studyGuideCount, setStudyGuideCount] = useState<number | null>(null);
@@ -59,18 +58,24 @@ const DashboardClient: React.FC<DashboardClientProps> = ({ userData }) => {
   // Fetch study guide count from Supabase
   const fetchStudyGuideCount = useCallback(async () => {
     try {
+      // Skip if no valid user ID
+      if (!userId) {
+        setIsLoading(false);
+        return;
+      }
+      
       // Get all study guides for this user
       const { data: studyGuides, error: studyError } = await supabase
         .from('study_guide')
         .select('title')
-        .eq('user_id', userData.id);
+        .eq('user_id', userId);
 
       if (studyError) {
         console.error('Error fetching study guides:', studyError.message);
       } else if (studyGuides) {
         // Count unique titles
         const uniqueTitles = new Set<string>();
-        studyGuides.forEach((guide: StudyGuideTitle) => {
+        studyGuides.forEach((guide: any) => {
           if (guide.title) {
             uniqueTitles.add(guide.title);
           }
@@ -79,12 +84,11 @@ const DashboardClient: React.FC<DashboardClientProps> = ({ userData }) => {
         setStudyGuideCount(uniqueTitles.size);
       }
       
-      // Get count of equations (if you have a separate table for equations)
-      // If equations are stored in the study_guide table, you might need a different query
+      // Get count of equations
       const { count: eqCount, error: eqError } = await supabase
-        .from('study_guide')
+        .from("study_guide")
         .select('id', { count: 'exact', head: true })
-        .eq('user_id', userData.id)
+        .eq('user_id', userId)
         .not('equation', 'eq', ''); // Count only records with non-empty equations
 
       if (eqError) {
@@ -98,7 +102,7 @@ const DashboardClient: React.FC<DashboardClientProps> = ({ userData }) => {
       console.error('Unexpected error fetching data:', error);
       setIsLoading(false);
     }
-  }, [supabase, userData.id]);
+  }, [supabase, userId]);
 
   useEffect(() => {
     fetchStudyGuideCount();
@@ -117,6 +121,11 @@ const DashboardClient: React.FC<DashboardClientProps> = ({ userData }) => {
       return <CircularProgress size={30} sx={{ color: colors.primary }} />;
     }
     return count;
+  };
+
+  // Get the first character of firstName safely
+  const getInitial = (name: string) => {
+    return name && typeof name === 'string' && name.length > 0 ? name.charAt(0) : 'U';
   };
 
   return (
@@ -147,7 +156,7 @@ const DashboardClient: React.FC<DashboardClientProps> = ({ userData }) => {
                   fontSize: '2rem'
                 }}
               >
-                {firstName.charAt(0)}
+                {getInitial(firstName)}
               </Avatar>
             </Grid>
             <Grid item xs={12} md={10}>
@@ -292,7 +301,13 @@ const DashboardClient: React.FC<DashboardClientProps> = ({ userData }) => {
           </Box>
           
           <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-            <ExampleEquations userId={userData.id} />
+            {userId ? (
+              <ExampleEquations userId={userId} />
+            ) : (
+              <Typography color={colors.lightText}>
+                Please log in to access the equation solver
+              </Typography>
+            )}
           </Box>
         </Paper>
       </Container>
