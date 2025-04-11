@@ -39,10 +39,14 @@ const Login: React.FC = () => {
 
   const handleGoogleSignIn = async () => {
     try {
+      const redirectUrl = process.env.NEXT_PUBLIC_SITE_URL 
+        ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/auth/callback`
+        : `${window.location.origin}/api/auth/callback`;
+        
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: `${origin}/api/auth/callback`,
+          redirectTo: redirectUrl,
         },
       });
 
