@@ -25,7 +25,7 @@ import { createClient } from 'app/utils/supabase/client';
 interface UserData {
   id: string;
   email: string;
-  fullName: string;
+  firstName: string; 
   lastName: string;
 }
 
@@ -35,7 +35,7 @@ interface DashboardClientProps {
 
 const DashboardClient: React.FC<DashboardClientProps> = ({ userData }) => {
   // Add a safety check for userData and provide default values
-  const firstName = userData?.fullName || 'User';
+  const firstName = userData?.firstName || 'User';
   const userId = userData?.id || '';
   
   const theme = useTheme();

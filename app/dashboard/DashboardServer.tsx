@@ -7,8 +7,9 @@ import DashboardClient from './DashboardClient';
 interface UserData {
   id: string;
   email: string;
-  fullName: string;
+  firstName: string;  
   lastName: string;
+  fullName: string;
 }
 
 const DashboardServer = async () => {
@@ -19,9 +20,13 @@ const DashboardServer = async () => {
   }
 
   try {
-    const userData: UserData = JSON.parse(cookieStore.value);
+    const parsedData = JSON.parse(cookieStore.value);
+    const userData: UserData = {
+      ...parsedData,
+      fullName: `${parsedData.firstName} ${parsedData.lastName}`,
+    };
     return <DashboardClient userData={userData} />;
-  } catch {
+  } catch (error) {
     redirect('/');
   }
 };

@@ -5,6 +5,12 @@ import Link from "next/link";
 import ArrowCircleLeftTwoToneIcon from '@mui/icons-material/ArrowCircleLeftTwoTone';
 import GoogleIcon from '@mui/icons-material/Google';
 import { signup } from '../login/actions';
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL || '',
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
+);
 
 const Register: React.FC = () => {
   const [password, setPassword] = useState<string>('');
@@ -51,6 +57,25 @@ const Register: React.FC = () => {
 
   const handleSnackbarClose = () => {
     setSnackbarOpen(false);
+  };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${window.location.origin}/api/auth/callback`,
+        },
+      });
+
+      if (error) throw error;
+      // The user will be redirected to Google for authentication
+    } catch (error) {
+      console.error('Error signing in with Google:', error);
+      setSnackbarSeverity('error');
+      setSnackbarMessage('Google sign-in failed. Please try again.');
+      setSnackbarOpen(true);
+    }
   };
 
   return (
@@ -168,9 +193,9 @@ const Register: React.FC = () => {
               color="primary"
               sx={{ mt: 3, mb: 2 }}
               startIcon={<GoogleIcon />}
-              // Handle Google login
+              onClick={handleGoogleSignIn}
             >
-              Sign In with Google
+              Register with Google
             </Button>
           </form>
         </Box>

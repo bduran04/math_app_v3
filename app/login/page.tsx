@@ -2,8 +2,9 @@
 import React, { useEffect } from 'react';
 import Link from "next/link";
 import MainLayout from '../layout';
-import { TextField, Button, Grid, Typography, Box, IconButton } from "@mui/material";
+import { TextField, Button, Grid, Typography, Box, IconButton, Divider } from "@mui/material";
 import ArrowCircleLeftTwoToneIcon from '@mui/icons-material/ArrowCircleLeftTwoTone';
+import GoogleIcon from '@mui/icons-material/Google'; // Import Google icon
 import { login } from './actions';
 import { createClient } from '../utils/supabase/client';
 import { useRouter } from 'next/navigation';
@@ -35,6 +36,22 @@ const Login: React.FC = () => {
       authListener.subscription.unsubscribe();
     };
   }, [router]);
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${window.location.origin}/api/auth/callback`,
+        },
+      });
+
+      if (error) throw error;
+      // The user will be redirected to Google for authentication
+    } catch (error) {
+      console.error('Error signing in with Google:', error);
+    }
+  };
 
   return (
     <div style={{ backgroundColor: "#fbf7ef" }}>
@@ -102,6 +119,19 @@ const Login: React.FC = () => {
               </Grid>
             </Grid>
           </form>
+
+          <Divider sx={{ mb: 1 }}>or</Divider>
+
+          <Button
+            fullWidth
+            variant="outlined"
+            color="primary"
+            sx={{ mt: 2, mb: 2 }}
+            startIcon={<GoogleIcon />}
+            onClick={handleGoogleSignIn}
+          >
+            Sign In with Google
+          </Button>
         </Box>
       </Grid>
     </div>
