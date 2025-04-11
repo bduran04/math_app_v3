@@ -27,18 +27,13 @@ export async function GET(request: NextRequest) {
       }
     );
     
-    // Exchange the code for a session
     await supabase.auth.exchangeCodeForSession(code);
-    
-    // Get the user after authentication
     const { data: { user } } = await supabase.auth.getUser();
     
-    // If user exists, store user data in cookie
     if (user) {
-      // Extract name information from Google auth metadata
+      // Extract name from Google auth metadata
       const fullName = user.user_metadata.full_name || user.user_metadata.name || '';
       
-      // Split the full name into first and last name
       let firstName = '';
       let lastName = '';
       
@@ -53,39 +48,37 @@ export async function GET(request: NextRequest) {
         email: user.email,
         firstName: firstName,
         lastName: lastName,
-        // Optionally add avatar URL as well
         avatar: user.user_metadata.avatar_url || user.user_metadata.picture || '',
       };
       
       cookieStore.set('user-data', JSON.stringify(userData), { 
         httpOnly: true,
         path: '/',
-        maxAge: 60 * 60 * 24 * 7, // 1 week
+        maxAge: 60 * 60 * 24 * 7,
         sameSite: 'lax',
         secure: process.env.NODE_ENV === 'production',
       });
       
-      // Optionally update the user profile in your database
+      // Update the user profile in your database
       try {
         await supabase
-          .from('profiles')  // Assuming you have a profiles table
+          .from('users')  // Match your table name from the screenshot
           .upsert({
             id: user.id,
             first_name: firstName,
             last_name: lastName,
             email: user.email,
-            avatar_url: user.user_metadata.avatar_url || user.user_metadata.picture || null,
             updated_at: new Date().toISOString(),
           }, {
             onConflict: 'id'
           });
       } catch (error) {
         console.error('Error updating profile:', error);
-        // Continue with the flow even if profile update fails
       }
     }
   }
   
-  // Redirect to the dashboard after successful authentication
-  return NextResponse.redirect(new URL('/dashboard', request.url));
+  // This redirect will work in both development and production
+  const redirectUrl = new URL('/dashboard', request.url);
+  return NextResponse.redirect(redirectUrl);
 }

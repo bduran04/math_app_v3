@@ -64,7 +64,7 @@ const Register: React.FC = () => {
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: `${window.location.origin}/api/auth/callback`,
+          redirectTo: `${origin}/api/auth/callback`,
         },
       });
 
