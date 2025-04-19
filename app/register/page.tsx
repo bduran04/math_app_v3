@@ -61,9 +61,10 @@ const Register: React.FC = () => {
 
   const handleGoogleSignIn = async () => {
     try {
-      const redirectUrl = process.env.NEXT_PUBLIC_SITE_URL 
-        ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/auth/callback`
-        : `${window.location.origin}/api/auth/callback`;
+      // For client-side, detect the current URL
+      const redirectUrl = typeof window !== 'undefined' 
+        ? `${window.location.origin}/api/auth/callback`
+        : `${process.env.NEXT_PUBLIC_SITE_URL}/api/auth/callback`;
         
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
@@ -71,7 +72,7 @@ const Register: React.FC = () => {
           redirectTo: redirectUrl,
         },
       });
-
+      
       if (error) throw error;
       // The user will be redirected to Google for authentication
     } catch (error) {
